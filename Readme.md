@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Daria Myshlennikova](https://up.htmlacademy.ru/htmlcss/21/user/577671).
-* Наставник: `Неизвестно`.
+* Наставник: [Мария Чернова](https://htmlacademy.ru/profile/id49571).
 
 ---
 
