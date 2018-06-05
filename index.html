@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Gllacy</title>
+    <title>Gllacy | Онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</title>
   </head>
 
   <body>
@@ -11,32 +11,32 @@
         <img class="main-header-logo" src="#" alt="Логотип интернет-магазина мороженого Gllacy">
         <ul class="site-navigation">
           <li><a href="catalog.html">Каталог</a>
-            <ul>
-              <li><a href="new.html">Новинки</a></li>
-              <li><a href="inner.html">Сливочное</a></li>
-              <li><a href="sorbet.html">Щербеты</a></li>
-              <li><a href="ice-pop.html">Фруктовый лед</a></li>
-              <li><a href="mellorine.html">Мелорин</a></li>
+            <ul class="site-navigation-sub">
+              <li class="site-navigation-sub-link"><a href="new.html">Новинки</a></li>
+              <li class="site-navigation-sub-link"><a href="inner.html">Сливочное</a></li>
+              <li class="site-navigation-sub-link"><a href="sorbet.html">Щербеты</a></li>
+              <li class="site-navigation-sub-link"><a href="ice-pop.html">Фруктовый лед</a></li>
+              <li class="site-navigation-sub-link"><a href="mellorine.html">Мелорин</a></li>
             </ul>
           </li>
           <li><a href="delivery-and-payment.html">Доставка и оплата</a></li>
           <li><a href="about.html">О Компании</a></li>
         </ul>
-        <button class="search" type="button">Поиск</button>
         <ul class="user-navigation">
-          <li><button class="login" type="button">Вход</button></li>
-          <li><button class="basket" type="button">Пусто</button></li>
+          <li class="user-navigation-link"><a class="search" href="search.html">Поиск</a></li>
+          <li class="user-navigation-link"><a class="login" href="login.html">Вход</a></li>
+          <li class="user-navigation-link"><a class="basket" href="basket.html">Пусто</a></li>
         </ul>
-        <p class="schedule">С 10 до 20, ежедневно<br>
-          <span class="phone-number">8 812 450-25-25</span></p>
       </nav>
+      <p class="main-header-schedule">С 10 до 20, ежедневно<br>
+          <span class="phone-number"><a href="tel:+78124502525">8 812 450-25-25</a></span></p>
     </header>
 
     <main>
       <h1 class="visually-hidden">Интернет-магазин мороженого Gllacy</h1>
 
       <section class="slider">
-        <ul class="slider-items">
+        <ul class="slider-list">
           <li><img src="#" alt="Крем-брюле и пломбир с малиновым джемом"></li>
           <li><img src="#" alt="Шоколадный пломбир и лимонный сорбет"></li>
           <li><img src="#" alt="Пломбир с помадкой и клубничный щербет"></li>
@@ -47,58 +47,60 @@
 
       <section class="special-offers">
         <h2 class="visually-hidden">Специальные предложения</h2>
-        <ul> <!-- Может, просто дивами, а не списком? -->
-          <li class="special-offers-item">
-            <h3>Малинка даром!</h3>
-          <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-          <button type="button">Хочу варенье!</button>
-          </li>
-          <li class="special-offers-item">
-            <h3>Шоколадки даром!</h3>
-          <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-          <button type="button">Хочу шоколадки!</button>
-          </li>
-        </ul>
+        <div class="special-offers-blocks">
+          <div class="special-offers-block">
+            <h3 class="special-offer-header">Малинка даром!</h3>
+            <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+            <button type="button">Хочу варенье!</button>
+          </div>
+          <div class="special-offers-block">
+            <h3 class="special-offer-header">Шоколадки даром!</h3>
+            <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+            <button type="button">Хочу шоколадки!</button>
+          </div>
+        </div>
       </section>
 
-      <section class="bestsellers">
+      <section class="catalog catalog-bestsellers">
         <h2 class="visually-hidden">Хиты продаж</h2>
-        <ul class="catalog-items bestsellers-items">
-          <li class="catalog-item">
-            <img src="#" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
-            <p><span class="catalog-item-price">310 ₽</span>/кг</p>
+        <ul class="catalog-list">
+          <li class="catalog-item catalog-item-bestseller">
+            <img class="catalog-item-img" src="#" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+            <p class="catalog-item-price"><span class="catalog-item-price-value">310 ₽</span><span class="catalog-item-price-weight">/кг</span></p>
             <h3><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
           </li>
-          <li class="catalog-item">
-            <img src="#" alt="Сливочно-кофейное с кусочками шоколада">
-            <p><span class="catalog-item-price">380 ₽</span>/кг</p>
+          <li class="catalog-item catalog-item-bestseller">
+            <img class="catalog-item-img" src="#" alt="Сливочно-кофейное с кусочками шоколада">
+            <p class="catalog-item-price"><span class="catalog-item-price-value">380 ₽</span><span class="catalog-item-price-weight">/кг</span></p>
             <h3><a href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
           </li>
-          <li class="catalog-item">
-            <img src="#" alt="Сливочно-клубничное с присыпкой из белого шоколада">
-            <p><span class="catalog-item-price">355 ₽</span>/кг</p>
+          <li class="catalog-item catalog-item-bestseller">
+            <img class="catalog-item-img" src="#" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+            <p class="catalog-item-price"><span class="catalog-item-price-value">355 ₽</span><span class="catalog-item-price-weight">/кг</span></p>
             <h3><a href="#">Сливочно-клубничное с присыпкой из белого шоколад</a></h3>
           </li>
-          <li class="catalog-item">
-            <img src="#" alt="Сливочное крем-брюле с карамельной подливкой">
-            <p><span class="catalog-item-price">415 ₽</span>/кг</p>
+          <li class="catalog-item catalog-item-bestseller">
+            <img class="catalog-item-img" src="#" alt="Сливочное крем-брюле с карамельной подливкой">
+            <p class="catalog-item-price"><span class="catalog-item-price-value">415 ₽</span><span class="catalog-item-price-weight">/кг</span></p>
             <h3><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
           </li>
         </ul>
       </section>
 
-      <section class="features">
+      <article class="features">
         <h2 class="visually-hidden">Преимущества</h2>
-        <div class="feature-main"><p>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</p></div> <!--Я правильно пониимаю, что тут, как и в других подобных случаях, надо мыслить не колонками, а рядами. которые переносятся на другую строку? Или тут нужно было заранее запланировать две колонки -- и обернуть в два div? -->
-        <div class="feature-1"><p>Все наше мороженое изготавливается на собственном  производстве, с использованием современного оборудования и проверенных временем технологий.</p></div>
-        <div class="feature-2"><p>Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p></div>
-        <div class="feature-3"><p>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества, все дополнительные ингридиенты и добавки произведены из натурального,экологически чистого сырья.</p></div>
-        <div class="feature-4"><p>Доставка нашего мороженого до заказчиков  осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p></div>
-      </section>
+        <ul class="features-list">
+          <li class="feature-item-main"><p>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</p></li>
+          <li class="feature-item"><p>Все наше мороженое изготавливается на собственном  производстве, с использованием современного оборудования и проверенных временем технологий.</p></li>
+          <li class="feature-item"><p>Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p></li>
+          <li class="feature-item"><p>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества, все дополнительные ингридиенты и добавки произведены из натурального,экологически чистого сырья.</p></li>
+          <li class="feature-item"><p>Доставка нашего мороженого до заказчиков  осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p></li>
+        </ul>
+      </article>
 
       <section class="blog-news">
-        <h2>Новое в нашем блоге</h2>
-        <h3>10 способов сервировки фруктовых щербетов к столу</h3>
+        <h2 class="blog-news-main-header">Новое в нашем блоге</h2>
+        <h3 class="blog-news--item-header"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h3>
       </section>
 
       <section class="subscription">
@@ -112,10 +114,10 @@
         <img src="#" alt="Офис Gllacy на карте ">
         <p>Адрес главного офиса<br>
           и оффлйн-магазина:<br>
-          <span>ул. Большая Конюшенная<br> <!-- Для выделений -- span или b? Можно вообще не использовать b, он странный? :) -->
+          <span>ул. Большая Конюшенная<br>
           19/8, Санкт-Петербург</span><br>
           Для заказов по телефону:<br>
-          <span>8 812 450-25-25</span><br> <!-- Можно сделать <a href="tel:+78124502525">8 812 450-25-25</a> ? -->
+          <span><a href="tel:+78124502525">8 812 450-25-25</a></span><br>
           (с 10 до 20 ежедневно)<br>
           <button type="button">Форма обратной связи</button>
         </p>
@@ -134,10 +136,10 @@
       <section>
         <nav class="footer-navigation">
           <ul>
-            <li><b><a href="for-suppliers.html">Для поставщиков</a></b></li>
-            <li><a href="documents.html">Наши документы</a></li>
-            <li><a href="manufactoring.html">О производстве</a></li>
-            <li><a href="eco.html">Экологические стандарты</a></li>
+            <li><a class="footer-navigation-link footer-navigation-link-suppliers" href="for-suppliers.html">Для поставщиков</a></li>
+            <li><a class="footer-navigation-link" href="documents.html">Наши документы</a></li>
+            <li><a class="footer-navigation-link" href="manufactoring.html">О производстве</a></li>
+            <li><a class="footer-navigation-link" href="eco.html">Экологические стандарты</a></li>
           </ul>
         </nav>
       </section>
