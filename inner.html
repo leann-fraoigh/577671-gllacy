@@ -8,12 +8,12 @@
   <body>
     <header class="main-header">
       <nav class="main-navigation">
-        <a class="main-header-logo" href="index.html"><img src="img/logo.svg" alt="Логотип интернет-магазина мороженого Gllacy" width="154" height="64"</a>
+        <a class="main-header-logo" href="index.html"><img src="img/logo.svg" alt="Логотип интернет-магазина мороженого Gllacy." width="154" height="64"></a>
         <ul class="site-navigation">
           <li><a href="catalog.html">Каталог</a>
             <ul class="site-navigation-sub">
               <li class="site-navigation-sub-link site-navigation-current"><a href="new.html">Новинки</a></li>
-              <li class="site-navigation-sub-link"><a href="inner.html">Сливочное</a></li>
+              <li class="site-navigation-sub-link"><a href="inner.html" aria-current="page">Сливочное</a></li> <!--Или сделать тут span вместо ссылки? Или ссылку без адреса?  -->
               <li class="site-navigation-sub-link"><a href="sorbet.html">Щербеты</a></li>
               <li class="site-navigation-sub-link"><a href="ice-pop.html">Фруктовый лед</a></li>
               <li class="site-navigation-sub-link"><a href="mellorine.html">Мелорин</a></li>
@@ -40,7 +40,73 @@
       </ul>
       <h1>Сливочное мороженое</h1>
       <h2 class="visually-hidden">Фильтр товаров</h2>
-      <!-- Форма с 5 полями и кнопкой -->
+      <form class="filter" action="https://echo.htmlacademy.ru" method="get">
+        <fieldset>
+          <legend>Сортировка:</legend>
+          <select name="sorting" id="filter-sorting">
+            <option value="popular">по популярности</option>
+            <option value="low-price">сначала недорогие</option>
+            <option value="high-price">сначала дорогие</option>
+            <option value="fat-content">по жирности</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Цена: 100 руб. – 500 руб.</legend>
+          <input type="range" min="0" max="1000" step="10">
+        </fieldset>
+
+        <fieldset>
+          <legend>Жирность:</legend>
+          <ul>
+            <li class="filter-option">
+              <input class="visually-hidden filter-input filter-input-radio" type="radio" name="fat-content" value="0" id="filter-0">
+              <label for="filter-0">0%</label>
+            </li>
+            <li class="filter-option">
+              <input class="visually-hidden filter-input filter-input-radio" type="radio" name="fat-content" value="0-9" id="filter-0-9" checked>
+              <label for="filter-0-9">до 10%</label>
+            </li>
+            <li class="filter-option">
+              <input class="visually-hidden filter-input filter-input-radio" type="radio" name="fat-content" value="0-29" id="filter-0-29">
+              <label for="filter-0-29">до 30%</label>
+            </li>
+            <li class="filter-option">
+              <input class="visually-hidden filter-input filter-input-radio" type="radio" name="fat-content" value="30-100" id="filter-30-100">
+              <label for="filter-30-100">выше 30%</label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <legend>Наполнители:</legend>
+          <ul>
+            <li class="filter-option">
+              <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="chocolate" id="filter-chocolate" checked>
+              <label for="filter-chocolate">шоколадные</label>
+            </li>
+            <li class="filter-option">
+              <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="sugar" id="filter-sugar" checked>
+              <label for="filter-sugar">сахарные присыпки</label>
+            </li>
+            <li class="filter-option">
+              <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="fruits" id="filter-fruits">
+              <label for="filter-fruits">фрукты</label>
+            </li>
+            <li class="filter-option">
+              <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="syrup" id="filter-syrup">
+              <label for="">сиропы</label>
+            </li>
+            <li class="filter-option">
+              <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="jam" id="filter-jam">
+              <label for="filter-jam">джемы</label>
+            </li>
+          </ul>
+        </fieldset>
+        <button class="button filter-button" type="submit">Применить</button>
+      </form>
+
+
       <h2 class="visually-hidden">Каталог сливочного мороженого</h2>
       <section class="catalog">
         <ul class="catalog-list">
@@ -106,11 +172,11 @@
           </li>
         </ul>
         <ul class="pagination">
-          <li class="pagination-link pagination-link-current">1</li>
+          <li class="pagination-link pagination-link-current"><a>1</a></li>
           <li class="pagination-link"><a href="#">2</a></li>
           <li class="pagination-link"><a href="#">3</a></li>
           <li class="pagination-link"><a href="#">4</a></li>
-          <li class="pagination-link"><a href="#">5</a></li>
+          <li class="pagination-link"><a href="#">5</a></li><!-- Тут два дополнительных элемента навигаии: "вперед" и "назад". Добавить их пунктами в список? -->
         </ul>
       </section>
     </main>
@@ -136,22 +202,36 @@
       </section>
 
       <p class="footer-copyright">
-        <img src="img/logo-htmlacademy.svg" alt="Логотип HTML Academy" width="108" height="39"><br>
+        <img src="img/logo-htmlacademy.svg" alt="Логотип HTML Academy." width="108" height="39"><br>
         Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017
       </p>
     </footer>
 
      <section class="modal modal-login">
         <h2 class="visually-hidden">Форма авторизации</h2>
-        <!-- Форма входа -->
-        <p>Забыли пароль?<br>
-          Новая регистрация
-        </p>
+        <form class="login-form" method="post" action="https://echo.htmlacademy.ru">
+          <p>
+            <label class="visually-hidden" for="login-email">Ваша электронная почта</label>
+            <input id="login-email" type="email" name="email" placeholder="Электронная почта">
+          </p>
+          <p>
+            <label class="visually-hidden" for="login-password">Ваш пароль</label>
+            <input id="login-password" type="password" name="password" placeholder="Пароль">
+          </p>
+          <button class="button" type="submit">Войти</button>
+          <p class="login-additional">
+            <a href="#">Забыли пароль?</a><br>
+            <a href="#">Новая регистрация</a>
+          </p>
+        </form>
       </section>
 
       <section class="modal modal-search">
         <h2 class="visually-hidden">Форма поиска</h2>
-        <!--форма поиска -->
+        <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
+          <input id="search-field" type="search" name="search" placeholder="Что ищем?" size="30">
+          <button class="button visually-hidden" type="submit">Искать</button>
+        </form>
       </section>
 
       <section class="modal modal-basket">

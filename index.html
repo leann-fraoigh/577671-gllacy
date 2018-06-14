@@ -8,7 +8,7 @@
   <body>
     <header class="main-header">
       <nav class="main-navigation">
-        <img class="main-header-logo" src="img/logo.svg" alt="Логотип интернет-магазина мороженого Gllacy" width="154" height="64">
+        <img class="main-header-logo" src="img/logo.svg" alt="Логотип интернет-магазина мороженого Gllacy." width="154" height="64">
         <ul class="site-navigation">
           <li><a href="catalog.html">Каталог</a>
             <ul class="site-navigation-sub">
@@ -39,19 +39,19 @@
         <ul class="slider-list">
           <li>
             <h3 class="slider-item-header">Крем-брюле и пломбир с малиновым джемом</h3>
-            <img src="img/slider-1.png" alt="Крем-брюле и пломбир с малиновым джемом" width="1045" height="881"> <!-- Не стоит здесь в альтах прописать что-то проде "Розовое мороженое с посыпкой сердечками", чтобы не бесить пользователей скринридеров и остальных повтором информации? -->
+            <img src="img/slider-1.png" alt="Два мороженых в рожке: кремовое с коричневыми полосками и белое с красными полосками." width="1045" height="881">
           </li>
           <li>
             <h3 class="slider-item-header">Шоколадный пломбир и лимонный сорбет</h3>
-            <img src="img/slider-2.png" alt="Шоколадный пломбир и лимонный сорбет" width="1065" height="859">
+            <img src="img/slider-2.png" alt="Два мороженых в рожке: коричневое с темно-коричневыми вкраплениями и кремовое с красными вкраплениями." width="1065" height="859">
           </li>
           <li>
             <h3 class="slider-item-header">Пломбир с помадкой и клубничный щербет</h3>
-            <img src="img/slider-3.png" alt="Пломбир с помадкой и клубничный щербет" width="1079" height="859">
+            <img src="img/slider-3.png" alt="Два мороженых в рожке: кремовое с коричневой помадкой и ярко-розовое." width="1079" height="859">
           </li>
         </ul>
         <!-- Переключатель слайдов -->
-        <a class="button slider-button">Давайте оба!</a>
+        <a class="button slider-button" href="#">Давайте оба!</a>
       </section>
 
       <section class="special-offers">
@@ -60,12 +60,12 @@
           <div class="special-offers-block">
             <h3 class="special-offer-header">Малинка даром!</h3>
             <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-            <a class="button special-offers-button">Хочу варенье!</a>
+            <a class="button special-offers-button" href="#">Хочу варенье!</a>
           </div>
           <div class="special-offers-block">
             <h3 class="special-offer-header">Шоколадки даром!</h3>
             <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-            <a class="button special-offers-button">Хочу шоколадки!</a>
+            <a class="button special-offers-button" href="#">Хочу шоколадки!</a>
           </div>
         </div>
       </section>
@@ -89,7 +89,7 @@
             <h3><a href="#">Сливочно-клубничное с присыпкой из белого шоколад</a></h3>
           </li>
           <li class="catalog-item catalog-item-bestseller">
-            <img class="catalog-item-img" src="img/cream-brulee_caramel-sauce.jpg" alt="Сливочное крем-брюле с карамельной подливкой" width="267" height="267">
+            <img class="catalog-item-img" src="img/cream-brulee_caramel-sauce.jpg" alt="Мороженое кремового цвета, политое карамелью." width="267" height="267">
             <p class="catalog-item-price"><span class="catalog-item-price-value">415 ₽</span><span class="catalog-item-price-weight">/кг</span></p>
             <h3><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
           </li>
@@ -115,26 +115,30 @@
       <section class="subscription">
         <h2 class="visually-hidden">Рассылка</h2>
         <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего саммого вкусного, что у нас происходит. Обещаем не спасить и не слать всякой ненужной ерунды. Честно =)</p>
-        <!-- Форма подпииски -->
+        <form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
+          <label for="subscription-email" class="visually-hidden">Электронная почта</label>
+          <input id="subscription-email" type="email" name="email" value="" placeholder="Электронная почта">
+          <button class="button" type="submit">Отправить</button>
+        </form>
       </section>
 
       <section class="contacts">
         <h2 class="visually-hidden">Контактная информация</h2>
-        <img src="img/map.png" alt="Офис Gllacy на карте" width="1200" height="430">
+        <img src="img/map.png" alt="Офис и магазин Gllacy на карте." width="1200" height="430">
         <p>Адрес главного офиса<br>
           и оффлйн-магазина:<br>
-          <span>ул. Большая Конюшенная<br>
+          <span>ул. Большая Конюшенная<br> <!-- Здесь и в других местах спану, который используется просто для выделения, нужно задавать класс (получается, в каждой секции классы будут разными), или можно его через родительский элеемент стилизовать?-->
           19/8, Санкт-Петербург</span><br>
           Для заказов по телефону:<br>
           <span><a href="tel:+78124502525">8 812 450-25-25</a></span><br>
           (с 10 до 20 ежедневно)<br>
-          <button type="button">Форма обратной связи</button>
+          <button class="button" type="button">Форма обратной связи</button>
         </p>
       </section>
     </main>
 
     <footer class="footer">
-      <section class="footer-socials">
+      <section class="footer-socials"> <!--Валидатор советует добавить секциям в футере заголовки. Может и правда, а то не ясно, что это? -->
         <ul>
           <li><a class="social-button" href="https://twitter.com/">Твиттер</a></li>
           <li><a class="social-button" href="https://www.instagram.com/">Инстаграм</a></li>
@@ -154,28 +158,58 @@
       </section>
 
       <p class="footer-copyright">
-        <img src="img/logo-htmlacademy.svg" alt="Логотип HTML Academy" width="108" height="39"><br>
+        <img src="img/logo-htmlacademy.svg" alt="Логотип HTML Academy." width="108" height="39"><br>
         Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017
-      </p>
+      </p> <!-- Стоит здесь сделать target="_blank", или сейчас его уже не используют?-->
     </footer>
 
      <section class="modal modal-login">
         <h2 class="visually-hidden">Форма авторизации</h2>
-        <!-- Форма входа -->
-        <p>Забыли пароль?<br>
-          Новая регистрация
-        </p>
+        <form class="login-form" method="post" action="https://echo.htmlacademy.ru">
+          <p>
+            <label class="visually-hidden" for="login-email">Ваша электронная почта</label>
+            <input id="login-email" type="email" name="email" placeholder="Электронная почта">
+          </p>
+          <p>
+            <label class="visually-hidden" for="login-password">Ваш пароль</label>
+            <input id="login-password" type="password" name="password" placeholder="Пароль">
+          </p>
+          <button class="button" type="submit">Войти</button>
+          <p class="login-additional">
+            <a href="#">Забыли пароль?</a><br>
+            <a href="#">Новая регистрация</a>
+          </p>
+        </form>
       </section>
 
       <section class="modal modal-search">
         <h2 class="visually-hidden">Форма поиска</h2>
-        <!--форма поиска -->
+        <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
+          <input id="search-field" type="search" name="search" placeholder="Что ищем?" size="30">
+          <button class="button visually-hidden" type="submit">Искать</button>
+        </form>
       </section>
 
       <section class="modal modal-feedback">
         <h2 class="visually-hidden">Форма обратной связи</h2>
-        <b>Мы обязательно вам ответим!</b>
-        <!-- -->
+        <span class="">Мы обязательно вам ответим!</span>
+        <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="feedback-form-user-info">
+            <p class="feedback-item">
+              <label class="visually-hidden" for="feedback-name">Ваше имя</label>
+              <input id="feedback-name" type="text" name="name" placeholder="Как вас зовут?">
+            </p>
+            <p class="feedback-item">
+              <label class="visually-hidden" for="feedback-email">Ваша электронная почта</label>
+              <input id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?">
+            </p>
+          </div>
+          <p class="feedback-form-user-message feedback-item">
+              <label class="visually-hidden" for="feedback-message">Тект сообщения</label>
+              <textarea name="message" id="feedback-message" cols="50" rows="6">Напишите что-нибудь...</textarea>
+          </p>
+          <button class="button" type="submit">Отправить</button>
+        </form>
       </section>
   </body>
 </html>
