@@ -13,7 +13,7 @@
           <li><a href="catalog.html">Каталог</a>
             <ul class="site-navigation-sub">
               <li class="site-navigation-sub-link site-navigation-current"><a href="new.html">Новинки</a></li>
-              <li class="site-navigation-sub-link"><a href="inner.html" aria-current="page">Сливочное</a></li> <!--Или сделать тут span вместо ссылки? Или ссылку без адреса?  -->
+              <li class="site-navigation-sub-link"><a href="inner.html" aria-current="page">Сливочное</a></li>
               <li class="site-navigation-sub-link"><a href="sorbet.html">Щербеты</a></li>
               <li class="site-navigation-sub-link"><a href="ice-pop.html">Фруктовый лед</a></li>
               <li class="site-navigation-sub-link"><a href="mellorine.html">Мелорин</a></li>
@@ -23,9 +23,55 @@
           <li><a href="about.html">О Компании</a></li>
         </ul>
         <ul class="user-navigation">
-          <li class="user-navigation-link"><a class="search" href="search.html">Поиск</a></li>
-          <li class="user-navigation-link"><a class="login" href="login.html">Вход</a></li>
-          <li class="user-navigation-link"><a class="basket basket-full" href="basket.html">2 товара</a></li>
+          <li class="user-navigation-link"><a class="search" href="search.html">Поиск</a>
+            <ul class="modal user-navigation-search-popup">
+              <li>
+                <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
+                  <label for="search-field">Поиск</label>
+                  <input id="search-field" type="search" name="search" placeholder="Что ищем?" size="30">
+                </form>
+              </li>
+            </ul>
+          </li>
+          <li class="user-navigation-link"><a class="login" href="login.html">Вход</a>
+            <ul class="modal user-navigation-login-popup">
+              <li>
+                <form class="login-form" method="post" action="https://echo.htmlacademy.ru">
+                  <h2 class="visually-hidden">Форма авторизации</h2>
+                  <p>
+                    <label class="visually-hidden" for="login-email">Ваша электронная почта</label>
+                    <input id="login-email" type="email" name="email" placeholder="Электронная почта">
+                  </p>
+                  <p>
+                    <label class="visually-hidden" for="login-password">Ваш пароль</label>
+                    <input id="login-password" type="password" name="password" placeholder="Пароль">
+                  </p>
+                  <button class="button" type="submit">Войти</button>
+                  <p class="login-additional">
+                    <a href="#">Забыли пароль?</a><br>
+                    <a href="#">Новая регистрация</a>
+                  </p>
+                </form>
+              </li>
+            </ul>
+          </li>
+          <li class="user-navigation-link"><a class="basket basket-full" href="basket.html">2 товара</a>
+            <ul class="modal user-navigation-basket-popup">
+              <li>
+                <h2 class="visually-hidden">Содержимое корзины</h2>
+                <table class="basket-contain">
+                  <tr>
+                    <td><img src="img/cream_orange-jam-ciron-flakes.jpg" alt="Бело-оранжевое мороженое." width="33" height="33"></td><td>Пломбир с апельсиновым джемом</td><td>1,5 кг х <span class="price">200 руб.</span></td><td>300 руб.</td>
+                  </tr>
+                  <tr>
+                    <td><img src="img/cream-strawberry_white-chocolate-topping.jpg" alt="Розовое мороженое с посыпкой в форме сердечек." width="33" height="33"></td><td>Клубничный пломбир с присыпкой из белого шоколада</td><td>1,5 кг х <span class="price">300 руб.</span></td><td>450 руб.</td>
+                  </tr>
+                </table>
+                <p><b>Итого: 750 руб.</b></p>
+                <button class="button" type="button">Оформить заказ</button>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <p class="main-header-schedule">С 10 до 20, ежедневно<br>
@@ -41,20 +87,17 @@
       <h1>Сливочное мороженое</h1>
       <h2 class="visually-hidden">Фильтр товаров</h2>
       <form class="filter" action="https://echo.htmlacademy.ru" method="get">
-        <fieldset>
-          <legend>Сортировка:</legend>
-          <select name="sorting" id="filter-sorting">
-            <option value="popular">по популярности</option>
-            <option value="low-price">сначала недорогие</option>
-            <option value="high-price">сначала дорогие</option>
-            <option value="fat-content">по жирности</option>
-          </select>
-        </fieldset>
 
-        <fieldset>
-          <legend>Цена: 100 руб. – 500 руб.</legend>
-          <input type="range" min="0" max="1000" step="10">
-        </fieldset>
+        <label for="filter-sorting">Сортировка:</label>
+        <select name="sorting" id="filter-sorting">
+          <option value="popular">по популярности</option>
+          <option value="low-price">сначала недорогие</option>
+          <option value="high-price">сначала дорогие</option>
+          <option value="fat-content">по жирности</option>
+        </select>
+
+        <label for="filter-range">Цена: 100 руб. – 500 руб.</label>
+        <input type="range" min="0" max="1000" step="10" id="filter-range">
 
         <fieldset>
           <legend>Жирность:</legend>
@@ -172,17 +215,20 @@
           </li>
         </ul>
         <ul class="pagination">
+          <li class="pagination-link"><button class="pagination-link pagination-back disabled" type="button">Назад</button></li>
           <li class="pagination-link pagination-link-current"><a>1</a></li>
           <li class="pagination-link"><a href="#">2</a></li>
           <li class="pagination-link"><a href="#">3</a></li>
           <li class="pagination-link"><a href="#">4</a></li>
-          <li class="pagination-link"><a href="#">5</a></li><!-- Тут два дополнительных элемента навигаии: "вперед" и "назад". Добавить их пунктами в список? -->
+          <li class="pagination-link"><a href="#">5</a></li>
+          <li class="pagination-link"><button class="pagination-link pagination-forward" type="button">Вперед</button></li>
         </ul>
       </section>
     </main>
 
     <footer class="footer">
       <section class="footer-socials">
+        <h2 class="visually-hidden">Мы в социальных сетях</h2>
         <ul>
           <li><a class="social-button" href="https://twitter.com/">Твиттер</a></li>
           <li><a class="social-button" href="https://www.instagram.com/">Инстаграм</a></li>
@@ -206,47 +252,6 @@
         Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017
       </p>
     </footer>
-
-     <section class="modal modal-login">
-        <h2 class="visually-hidden">Форма авторизации</h2>
-        <form class="login-form" method="post" action="https://echo.htmlacademy.ru">
-          <p>
-            <label class="visually-hidden" for="login-email">Ваша электронная почта</label>
-            <input id="login-email" type="email" name="email" placeholder="Электронная почта">
-          </p>
-          <p>
-            <label class="visually-hidden" for="login-password">Ваш пароль</label>
-            <input id="login-password" type="password" name="password" placeholder="Пароль">
-          </p>
-          <button class="button" type="submit">Войти</button>
-          <p class="login-additional">
-            <a href="#">Забыли пароль?</a><br>
-            <a href="#">Новая регистрация</a>
-          </p>
-        </form>
-      </section>
-
-      <section class="modal modal-search">
-        <h2 class="visually-hidden">Форма поиска</h2>
-        <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
-          <input id="search-field" type="search" name="search" placeholder="Что ищем?" size="30">
-          <button class="button visually-hidden" type="submit">Искать</button>
-        </form>
-      </section>
-
-      <section class="modal modal-basket">
-        <h2 class="visually-hidden">Содержимое корзины</h2>
-        <table class="basket-contain">
-          <tr>
-            <td><img src="img/cream_orange-jam-ciron-flakes.jpg" alt="Бело-оранжевое мороженое." width="33" height="33"></td><td>Пломбир с апельсиновым джемом</td><td>1,5 кг х <span class="price">200 руб.</span></td><td>300 руб.</td>
-          </tr>
-          <tr>
-            <td><img src="img/cream-strawberry_white-chocolate-topping.jpg" alt="Розовое мороженое с посыпкой в форме сердечек." width="33" height="33"></td><td>Клубничный пломбир с присыпкой из белого шоколада</td><td>1,5 кг х <span class="price">300 руб.</span></td><td>450 руб.</td>
-          </tr>
-        </table>
-        <p><b>Итого: 750 руб.</b></p>
-        <button type="button">Оформить заказ</button>
-      </section>
   </body>
 </html>
 
