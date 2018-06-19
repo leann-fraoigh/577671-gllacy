@@ -1,0 +1,613 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+
+  background-color: #849d8f;
+}
+
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(225, 225, 225, 0.3);
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #ffbc9e;
+
+  border-bottom-color: #ffbc9e;
+}
+
+.theme-light {
+  color: #323232;
+
+  background-color: #f8f7f4;
+}
+
+.theme-light a {
+  color: #323232;
+
+  border-bottom-color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-light a:hover,
+.theme-light a:focus,
+.theme-light a:active {
+  color: #e84d37;
+
+  border-bottom-color: rgba(232, 77, 55, 0.3);
+}
+
+.button {
+  font: inherit;
+
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+
+  background-image: linear-gradient(to top, #ca3824, #f26843);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 2px 2px 0 rgba(85, 8, 0, 0.54);
+}
+
+.button:hover,
+.button:focus {
+  color: #fefefe;
+  background-image: linear-gradient(to top, #e74a35, #f26843), linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  box-shadow: 0px 1px 2px 0 #ac1000;
+}
+
+.button:active {
+  color: #fceeec;
+
+  background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.07));
+  box-shadow: inset 0px 2px 2px 0 #942718;
+}
+
+
+
+
+/* ------ Header ------ */
+
+/* Главное меню */
+
+.main-header-logo {
+  border: none;
+}
+
+.main-navigation {
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.site-navigation,
+.site-navigation-sub,
+.user-navigation,
+.modal {
+  list-style: none;
+}
+
+
+.site-navigation a {
+  border: none;
+}
+
+
+.site-navigation-link > a:hover,
+.site-navigation-link > a:focus {
+  color: #333333;
+
+  background-color: #f7f6f3;
+  border-radius: 20px 20px;
+
+}
+
+.site-navigation-link > a:active {
+  background-color: #ededed;
+  box-shadow: inset 0px 2px 1px 0 #696969;
+}
+
+.site-navigation-current > a {
+  color: #ffffff;
+
+  background-color: #d07058;
+  border-radius: 20px 20px;
+}
+
+.site-navigation-sub{
+  background-color: #f8f7f4;
+}
+
+.site-navigation-sub,
+.modal {
+  border-radius: 3px;
+  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+.site-navigation-sub a {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #323232;
+}
+
+.site-navigation-sub a:hover,
+.site-navigation-sub a:focus {
+  background-color: #fbded7;
+
+}
+
+.site-navigation-sub a:active {
+  background-color: #f6b5a5;
+}
+
+.site-navigation-sub-current a {
+  color: #ffffff;
+  background-color: #d07058;
+}
+
+.site-navigation-sub-current a:hover,
+.site-navigation-sub-current a:focus {
+  color: #000000;
+}
+
+.site-navigation-sub-link:first-child {
+  border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+}
+
+.site-navigation-sub .important {
+  font-weight: 700;
+}
+
+/* Меню пользователя */
+
+.user-navigation-link > a {
+  font-size: 14px;
+  line-height: 16px;
+
+  background-color: rgba(225, 225, 225, 0.2);
+  border-bottom: none;
+  border-radius: 20px;
+}
+
+.user-navigation-link > a:hover,
+.user-navigation-link > a:focus,
+.user-navigation-link > a:active,
+.user-navigation-link a.basket-full {
+  color: #323232;
+
+  background-color: #f8f7f4;
+}
+
+.main-header-schedule {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+
+  text-align: right;
+}
+
+.main-header-phone-number a {
+  font-size: 22px;
+  line-height: 24px;
+
+  border-bottom: none;
+}
+
+/* Модальные окна */
+
+.modal {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  border-radius: 3px;
+}
+
+.modal a {
+  line-height: 24px;
+}
+
+.modal input,
+.modal textarea {
+  font-size: 14px;
+  line-height: 24px;
+  vertical-align: middle;
+  font-weight: 700;
+  color: #323232;
+
+  background-color: #ffffff;
+  border: solid 1px #d3d3d2;
+  border-radius: 3px;
+}
+
+.modal input:hover,
+.modal textarea:hover {
+  box-shadow: 0 0 0 2px rgba(154, 154, 154, 0.52) inset;
+  border-color: transparent;
+  /*border: solid 2px rgba(154, 154, 154, 0.52); -- Вроде бы можно было сделать просто бордер и скомпенсировать отрицаиельным маргином, но почему-то не сработало. (*/
+}
+
+.modal input:focus,
+.modal textarea:focus,
+.modal input:active,
+.modal textarea:active  {
+  font-weight: 700;
+
+  box-shadow: 0 0 0 2px rgba(46, 136, 228, 0.52) inset;
+  border-color: transparent;
+}
+
+.modal input::placeholder,
+.modal textarea::placeholder  {
+   font-weight: 400;
+   color: #999999;
+}
+
+
+.user-navigation-basket-popup .price {
+  color: #999999;
+}
+
+.user-navigation-basket-popup .sum {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.user-navigation-basket-popup table {
+  border-bottom: 1px solid #cacac7;
+}
+
+/* ------ Main ------ */
+
+.breadcrumbs {
+  font-size: 14px;
+  line-height: 16px;
+  list-style: none;
+}
+
+.slider-list {
+  list-style: none;
+}
+
+.slider-item-header {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.slider-controls {
+  list-style: none;
+}
+
+.slider .slider-button {
+  font-size: 32px;
+  line-height: 44px;
+
+  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
+  background-image: linear-gradient(to top, #e74a35, #f26843);
+  box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
+}
+
+.slider .slider-button:hover,
+.slider .slider-button:focus {
+  color: #ffffff;
+
+  background-image: linear-gradient(to top, #F58769, #ED705E); /*Многослойный градиент тут не заработал, так и не поняла, почему. ( */
+  box-shadow: 0px 2px 2px 0 #ac1000;
+}
+
+.slider .slider-button:active {
+  color: #fceeec;
+  box-shadow: inset 0px 2px 2px 0 #942718;
+}
+
+
+.special-offers-block {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #ffffff;
+
+  background-color: #9d8b84;
+  border-radius: 15px;
+}
+
+.special-offer-header {
+  font-size: 35px;
+  line-height: 41px;
+}
+
+.raspberry {
+  background-image: url("../img/offer-background-1.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.chocolate {
+  background-image: url("../img/offer-background-2.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+
+/* Карточка товара */
+
+.catalog-list {
+  list-style: none;
+}
+
+.catalog-item-img {
+  border-radius: 50%;
+}
+
+.catalog-item-price {
+  font-size: 45px;
+  line-height: 45px;
+  font-weight: 700;
+
+  text-shadow: 0.5px 0.9px 3px rgba(49, 50, 53, 0.5);
+}
+
+.catalog-item-price-weight {
+  font-size: 30px;
+}
+
+.catalog-item h3 {
+  text-align: center;
+}
+
+/* Преимущества */
+
+.features {
+  background-color: #E9DCC2;
+  background-image: url("../img/features-background.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+.features-list {
+  list-style: none;
+}
+
+.feature-item-main {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+/* Блог */
+
+.blog-news {
+  background-color: #ffffff;
+  background-image: url(../img/news.jpg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+.blog-news-main-header {
+  font: inherit;
+}
+
+.blog-news-item-header a {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+
+  text-decoration: underline;
+  border: none;
+}
+
+.blog-news-item-header a:hover,
+.blog-news-item-header a:focus,
+.blog-news-item-header a:active {
+  text-decoration: underline; /*В макете явно подчеркивание, а не бордер, как у дргуих ссылок, но более толстое, чем получается автоматически. Не пойму, как сделать, как в макете.*/
+  border: none;
+
+}
+
+
+/* Рассылка */
+
+.subscription {
+  color: #5a5a5a;
+
+  background-image: url("../img/bg-post.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+.subscription .container {
+  background-color: #f8f7f4;
+  border-radius: 15px;
+}
+
+.contacts {
+
+  background-image: url("../img/map.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.contacts .address,
+.contacts a  {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.contacts a {
+  line-height: 22px;
+  border: none;
+
+}
+
+.contacts .container {
+  font-size: 14px;
+  line-height: 20px;
+
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+
+/* ------ Каталог ------ */
+
+.main h1 {
+  font-size: 35px;
+  line-height: 41px;
+}
+
+.filter {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+
+}
+
+.filter .containter {
+  font-size: 16px;
+  line-height: 18px;
+
+  background-color: rgba(255,255, 255, 0.2);
+  border-radius: 20px;
+}
+
+.filter ul {
+  list-style: none;
+}
+
+.filter fieldset {
+  border: none;
+}
+
+
+.filter select {
+  font: inherit;
+  color: #ffffff;
+
+  background-color: rgba(255,255, 255, 0.2);
+  border: none;
+  border-radius: 20px;
+
+ /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;*/
+}
+
+.filter select:hover,
+.filter select:focus {
+  color: #323232;
+}
+
+.filter-button {
+  font: inherit;
+
+  background-color: rgba(255,255, 255, 0.2);
+  background-image: none;
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+  color: #323232;
+
+  background-image: none;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.filter-button:active {
+  background-color: #ededed;
+  background-image: none;
+  box-shadow: inset 0px 2px 1px 0 #696969;
+}
+
+.catalog {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pagination {
+  list-style: none;
+}
+
+.pagination-link a {
+  border: none;
+  border-radius: 50%;
+}
+
+.pagination-link a:hover,
+.pagination-link a:focus {
+  color: #ffffff;
+
+  background-color: rgba(255,255, 255, 0.2);
+}
+
+
+.pagination-link .current {
+  color: #323232;
+
+  background-color: #ffffff;
+}
+
+.pagination-link .disabled {
+  color: rgba(255,255, 255, 0.2);
+}
+
+
+
+/* ------ Footer ------ */
+
+.footer-socials ul,
+.footer-navigation ul {
+  list-style: none;
+}
+
+.footer a {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.footer-navigation-link-suppliers a {
+  font-weight: 700;
+}
+
+.footer-copyright,
+.footer-copyright a {
+  font-size: 12px;
+}
+
+
+/* ------ Форма обратной связи ------ */
+
+.modal-feedback .important {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+
+}
+
+.modal-feedback input,
+.modal-feedback textarea {
+  font-size: 16px;
+
+
+}
+
+
