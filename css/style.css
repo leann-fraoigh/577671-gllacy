@@ -236,8 +236,6 @@ a:active {
 .modal textarea:hover {
   box-shadow: 0 0 0 2px rgba(154, 154, 154, 0.52) inset;
   border-color: transparent;
-  /*border: solid 2px rgba(154, 154, 154, 0.52); -- Вроде бы можно было сделать просто бордер и скомпенсировать отрицаиельным маргином, но почему-то не сработало. (*/
-}
 
 .modal input:focus,
 .modal textarea:focus,
@@ -306,7 +304,7 @@ a:active {
 .slider .slider-button:focus {
   color: #ffffff;
 
-  background-image: linear-gradient(to top, #F58769, #ED705E); /*Многослойный градиент тут не заработал, так и не поняла, почему. ( */
+  background-image: linear-gradient(to top, #F58769, #ED705E);
   box-shadow: 0px 2px 2px 0 #ac1000;
 }
 
@@ -409,15 +407,13 @@ a:active {
   line-height: 30px;
   font-weight: 700;
 
-  text-decoration: underline;
-  border: none;
+  border-width: 2px;
 }
 
 .blog-news-item-header a:hover,
 .blog-news-item-header a:focus,
 .blog-news-item-header a:active {
-  text-decoration: underline; /*В макете явно подчеркивание, а не бордер, как у дргуих ссылок, но более толстое, чем получается автоматически. Не пойму, как сделать, как в макете.*/
-  border: none;
+  border-width: 2px;
 
 }
 
