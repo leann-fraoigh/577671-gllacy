@@ -75,29 +75,66 @@ a:active {
   box-shadow: inset 0px 2px 2px 0 #942718;
 }
 
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 27px;
+  box-sizing: border-box;
+  /*Временно */
+  /*outline: 1px dotted red;*/
 
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
 
 
 /* ------ Header ------ */
 
 /* Главное меню */
 
+.main-header {
+  position: relative;
+
+  margin-top: 9px;
+}
+
 .main-header-logo {
+  margin-right: 10px;
   border: none;
 }
 
+
 .main-navigation {
-  line-height: 18px;
+  display: flex;
+
   font-weight: 700;
+  line-height: 18px;
+   /*Временно */
+  /*outline: 1px solid blue;*/
 }
 
 .site-navigation,
 .site-navigation-sub,
 .user-navigation,
 .modal {
+  margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 
+.site-navigation {
+  max-width: 550px;
+
+  /* Временно для сетки */
+  /*outline: 1px solid yellow;*/
+}
 
 .site-navigation a {
   border: none;
@@ -126,12 +163,13 @@ a:active {
 }
 
 .site-navigation-sub{
+  border-radius: 3px;
+
   background-color: #f8f7f4;
 }
 
 .site-navigation-sub,
 .modal {
-  border-radius: 3px;
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
@@ -173,6 +211,14 @@ a:active {
 
 /* Меню пользователя */
 
+.user-navigation {
+  max-width: 420px;
+  margin-left: auto;
+
+  /* Временно */
+  /*outline: 1px solid yellow;*/
+}
+
 .user-navigation-link > a {
   font-size: 14px;
   line-height: 16px;
@@ -192,11 +238,23 @@ a:active {
 }
 
 .main-header-schedule {
+  position: absolute;
+  bottom: 0;
+  right: 27px;
+  transform: translateY(100%);
+
+  width: 166px;
+  margin: 0;
+  padding: 0;/* Почему это здесь нужно????*/
+
   font-size: 14px;
   font-weight: 700;
   line-height: 16px;
 
   text-align: right;
+
+      /*Временно */
+  /*outline: 1px solid green;*/
 }
 
 .main-header-phone-number a {
@@ -212,7 +270,7 @@ a:active {
   font-size: 13px;
   line-height: 16px;
   font-weight: 400;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .modal a {
@@ -254,6 +312,17 @@ a:active {
    color: #999999;
 }
 
+.user-navigation-search-popup {
+  padding: 20px 15px;
+}
+
+.user-navigation-login-popup {
+  padding: 20px 18px;
+}
+
+.user-navigation-basket-popup {
+  padding: 20px 15px;
+}
 
 .user-navigation-basket-popup .price {
   color: #999999;
@@ -272,12 +341,17 @@ a:active {
 /* ------ Main ------ */
 
 .breadcrumbs {
+  margin: 0;
+  padding: 0;
+
   font-size: 14px;
   line-height: 16px;
   list-style: none;
 }
 
 .slider-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -314,8 +388,24 @@ a:active {
   box-shadow: inset 0px 2px 2px 0 #942718;
 }
 
+.special-offers {
+  margin-bottom: 40px;
+}
+
+.special-offers-blocks {
+  display: flex;
+  justify-content: space-between;
+
+   /*Временно */
+  /*outline: 2px solid blue;*/
+  }
 
 .special-offers-block {
+  width: 560px;
+  height: 229px;
+  padding: 18px 20px 23px 20px;
+  box-sizing: border-box;
+
   font-size: 18px;
   line-height: 22px;
   font-weight: 700;
@@ -323,9 +413,14 @@ a:active {
 
   background-color: #9d8b84;
   border-radius: 15px;
+
+  /*Временно */
+  /*outline: 1px solid yellow;*/
 }
 
 .special-offer-header {
+  margin-top: 0; /*Что в подобных случаях делать с внешними отступами текста, которые не выпадают из родительского блока? Каждый  раз обнулять вручную?  */
+
   font-size: 35px;
   line-height: 41px;
 }
@@ -345,8 +440,27 @@ a:active {
 
 /* Карточка товара */
 
+.catalog {
+  margin-bottom: 25px;
+}
+
 .catalog-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+
   list-style: none;
+}
+
+.catalog-item {
+  width: 267px;
+  margin-bottom: 33px;
+
+  /*Временно */
+  /*outline: 1px solid yellow;*/
 }
 
 .catalog-item-img {
@@ -372,29 +486,59 @@ a:active {
 /* Преимущества */
 
 .features {
-  background-color: #E9DCC2;
-  background-image: url("../img/features-background.jpg");
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  border-radius: 15px;
+  margin-bottom: 40px;
+
 }
 
 .features-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 20px;
+
+  background-color: #E9DCC2;
+  background-image: url("../img/features-background-pattern.jpg");
+  background-repeat: repeat;
+  border-radius: 15px;
   list-style: none;
 }
 
 .feature-item-main {
+  width: 100%;
+
   font-size: 24px;
   line-height: 30px;
-  font-weight: 500;
+  font-weight: 500; /*Что в подобных случаях делать с внешними отступами текста, которые не выпадают из родительского блока? Каждый  раз обнулять вручную?  */
 }
 
+.feature-item {
+  width: 483px;
+  padding-left: 58px;
+
+  /* Временно */
+/*  outline: 1px solid red;*/
+}
+
+/* Блог и рассылка */
+
+.new {
+  display: flex;
+  justify-content: space-between;
+}
 /* Блог */
 
 .blog-news {
+  width: 560px;
+  min-height: 220px;
+  padding: 20px;
+  box-sizing: border-box;
+
   background-color: #ffffff;
   background-image: url(../img/news.jpg);
   background-position: 0 0;
+  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 15px;
 }
@@ -408,6 +552,7 @@ a:active {
   line-height: 30px;
   font-weight: 700;
 
+  border-color: #323232;
   border-width: 2px;
 }
 
@@ -422,24 +567,73 @@ a:active {
 /* Рассылка */
 
 .subscription {
+  width: 560px;
+  padding: 5px;
+  box-sizing: border-box;
+
   color: #5a5a5a;
 
   background-image: url("../img/bg-post.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
   border-radius: 15px;
+  background-size: cover;
 }
 
 .subscription .container {
+  min-height: 190px;
+  padding: 20px;
+
   background-color: #f8f7f4;
   border-radius: 15px;
 }
 
-.contacts {
+/* Контакты */
 
-  background-image: url("../img/map.png");
+.contacts {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  height: 430px;
+  margin: 0 auto;
+  margin-top: 40px;
+  overflow: hidden;
+
+/*  background-image: url("../img/map.png");
   background-position: 0 0;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
+}
+
+
+.contaсts-map {
+  display: block;
+  margin: 0 auto;
+}
+
+.contacts .container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contacts .container {
+  font-size: 14px;
+  line-height: 20px;
+
+  background-color: #ffffff;
+}
+
+.contacts-info {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+
+  max-width: 500px;
+  max-height: 400px;
+  margin: 0; /*Откуда тут берется маргиин 14 % и почему от него никак не избавитться ((( )))*/
+  padding: 25px;
+
+  border-radius: 15px;
 }
 
 .contacts .address,
@@ -455,13 +649,6 @@ a:active {
 
 }
 
-.contacts .container {
-  font-size: 14px;
-  line-height: 20px;
-
-  background-color: #ffffff;
-  border-radius: 15px;
-}
 
 
 /* ------ Каталог ------ */
@@ -472,6 +659,11 @@ a:active {
 }
 
 .filter {
+  display: flex;
+  align-items: flex-end;
+
+  margin-bottom: 40px;
+
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
@@ -487,10 +679,15 @@ a:active {
 }
 
 .filter ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .filter fieldset {
+  margin: 0;
+  padding: 0;
+
   border: none;
 }
 
@@ -537,7 +734,7 @@ a:active {
 }
 
 .catalog {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+/*  border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
 }
 
 .pagination {
@@ -571,8 +768,20 @@ a:active {
 
 /* ------ Footer ------ */
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inner-page .footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
 .footer-socials ul,
 .footer-navigation ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -592,6 +801,13 @@ a:active {
 
 
 /* ------ Форма обратной связи ------ */
+
+.modal-feedback {
+  width: 478px;
+  padding: 20px 25px 25px 25px;
+
+  border-radius: 10px;
+}
 
 .modal-feedback .important {
   font-size: 24px;

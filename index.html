@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <header class="main-header">
+    <header class="main-header wrapper">
       <nav class="main-navigation">
         <img class="main-header-logo" src="img/logo.svg" alt="Логотип интернет-магазина мороженого Gllacy." width="154" height="64">
         <ul class="site-navigation">
@@ -68,9 +68,9 @@
     </header>
 
     <main>
-      <h1 class="visually-hidden">Интернет-магазин мороженого Gllacy</h1>
+      <h1 class="visually-hidden wrapper">Интернет-магазин мороженого Gllacy</h1>
 
-      <section class="slider">
+      <section class="slider wrapper">
         <ul class="slider-list">
           <li>
             <h3 class="slider-item-header">Крем-брюле и пломбир с малиновым джемом</h3>
@@ -93,7 +93,7 @@
         <a class="button slider-button" href="#">Давайте оба!</a>
       </section>
 
-      <section class="special-offers">
+      <section class="special-offers wrapper">
         <h2 class="visually-hidden">Специальные предложения</h2>
         <div class="special-offers-blocks">
           <div class="special-offers-block raspberry">
@@ -109,7 +109,7 @@
         </div>
       </section>
 
-      <section class="catalog catalog-bestsellers">
+      <section class="catalog catalog-bestsellers wrapper">
         <h2 class="visually-hidden">Хиты продаж</h2>
         <ul class="catalog-list">
           <li class="catalog-item catalog-item-bestseller">
@@ -135,9 +135,9 @@
         </ul>
       </section>
 
-      <section class="features theme-light">
+      <section class="features wrapper">
         <h2 class="visually-hidden">Преимущества</h2>
-        <ul class="features-list">
+        <ul class="features-list theme-light">
           <li class="feature-item-main"><p>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</p></li>
           <li class="feature-item"><p>Все наше мороженое изготавливается на собственном  производстве, с использованием современного оборудования и проверенных временем технологий.</p></li>
           <li class="feature-item"><p>Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p></li>
@@ -146,28 +146,30 @@
         </ul>
       </section>
 
-      <article class="blog-news theme-light">
-        <h2 class="blog-news-main-header">Новое в нашем блоге</h2>
-        <h3 class="blog-news-item-header"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h3>
-      </article>
+      <div class="new wrapper">
+        <article class="blog-news theme-light">
+          <h2 class="blog-news-main-header">Новое в нашем блоге</h2>
+          <h3 class="blog-news-item-header"><a href="#">10 способов сервировки<br>фруктовых щербетов к столу</a></h3>
+        </article>
 
-      <section class="subscription theme-light">
-        <div class="container">
-          <h2 class="visually-hidden">Рассылка</h2>
-          <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего саммого вкусного, что у нас происходит. Обещаем не спасить и не слать всякой ненужной ерунды. Честно =)</p>
-          <form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
-            <label for="subscription-email" class="visually-hidden">Электронная почта</label>
-            <input id="subscription-email" type="email" name="email" value="" placeholder="Электронная почта">
-            <button class="button" type="submit">Отправить</button>
-          </form>
-        </div>
-      </section>
+        <section class="subscription theme-light">
+          <div class="container">
+            <h2 class="visually-hidden">Рассылка</h2>
+            <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спасить и не слать всякой ненужной ерунды. Честно =)</p>
+            <form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
+              <label for="subscription-email" class="visually-hidden">Электронная почта</label>
+              <input id="subscription-email" type="email" name="email" value="" placeholder="Электронная почта">
+              <button class="button" type="submit">Отправить</button>
+            </form>
+          </div>
+        </section>
+      </div>
 
-      <section class="contacts theme-light">
-        <div class="container">
-          <h2 class="visually-hidden">Контактная информация</h2>
-          <img src="img/map.png" alt="Офис и магазин Gllacy на карте." width="1200" height="430">
-          <p>Адрес главного офиса<br>
+      <section class="contacts">
+        <h2 class="visually-hidden wrapper">Контактная информация</h2>
+        <img class="contaсts-map" src="img/map.png" alt="Офис и магазин Gllacy на карте." width="1200" height="430">
+        <div class="container wrapper">
+          <p class="contacts-info theme-light">Адрес главного офиса<br>
             и оффлйн-магазина:<br>
             <span class="address">ул. Большая Конюшенная<br>
             19/8, Санкт-Петербург</span><br>
@@ -180,7 +182,7 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer wrapper">
       <section class="footer-socials">
         <h2 class="visually-hidden">Мы в социальных сетях</h2>
         <ul>

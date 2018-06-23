@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
 
-  <body>
-    <header class="main-header">
+  <body class="inner-page">
+    <header class="main-header wrapper">
       <nav class="main-navigation">
         <a class="main-header-logo" href="index.html"><img src="img/logo.svg" alt="Логотип интернет-магазина мороженого Gllacy." width="154" height="64"></a>
         <ul class="site-navigation">
@@ -81,7 +81,7 @@
           <span class="main-header-phone-number"><a href="tel:+78124502525">8 812 450-25-25</a></span></p>
     </header>
 
-    <main>
+    <main class="wrapper">
       <ul class="breadcrumbs">
         <li><a class="breadcrumbs-link" href="index.html">Главная</a></li>
         <li><a class="breadcrumbs-link" href="catalog.html">Каталог</a></li>
@@ -91,7 +91,7 @@
       <h2 class="visually-hidden">Фильтр товаров</h2>
       <form class="filter" action="https://echo.htmlacademy.ru" method="get">
 
-        <label for="filter-sorting">Сортировка:</label>
+        <label for="filter-sorting">Сортировка:<br>
         <div class="containter">
           <select name="sorting" id="filter-sorting">
             <option value="popular">по популярности</option>
@@ -100,11 +100,13 @@
             <option value="fat-content">по жирности</option>
           </select>
         </div>
+        </label>
 
-        <label for="filter-range">Цена: 100 руб. – 500 руб.</label>
+        <label for="filter-range">Цена: 100 руб. – 500 руб.<br>
         <div class="containter">
           <input type="range" min="0" max="1000" step="10" id="filter-range">
         </div>
+        </label>
 
         <fieldset>
           <legend>Жирность:</legend>
@@ -237,7 +239,7 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer wrapper">
       <section class="footer-socials">
         <h2 class="visually-hidden">Мы в социальных сетях</h2>
         <ul>
