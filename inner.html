@@ -91,22 +91,24 @@
       <h2 class="visually-hidden">Фильтр товаров</h2>
       <form class="filter" action="https://echo.htmlacademy.ru" method="get">
 
-        <label for="filter-sorting">Сортировка:<br>
-        <div class="containter">
-          <select name="sorting" id="filter-sorting">
-            <option value="popular">по популярности</option>
-            <option value="low-price">сначала недорогие</option>
-            <option value="high-price">сначала дорогие</option>
-            <option value="fat-content">по жирности</option>
-          </select>
+        <div class="filter-item">
+          <label for="filter-sorting">Сортировка:</label>
+          <div class="containter">
+            <select name="sorting" id="filter-sorting">
+              <option value="popular">по популярности</option>
+              <option value="low-price">сначала недорогие</option>
+              <option value="high-price">сначала дорогие</option>
+              <option value="fat-content">по жирности</option>
+            </select>
+          </div>
         </div>
-        </label>
 
-        <label for="filter-range">Цена: 100 руб. – 500 руб.<br>
-        <div class="containter">
-          <input type="range" min="0" max="1000" step="10" id="filter-range">
+        <div class="filter-item">
+          <label for="filter-range">Цена: 100 руб. – 500 руб.</label>
+          <div class="containter">
+            <input type="range" min="0" max="1000" step="10" id="filter-range">
+          </div>
         </div>
-        </label>
 
         <fieldset>
           <legend>Жирность:</legend>
