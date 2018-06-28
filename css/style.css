@@ -69,21 +69,21 @@ img {
   background-image: linear-gradient(to top, #ca3824, #f26843);
   border: none;
   border-radius: 50px;
-  box-shadow: 0px 2px 2px 0 rgba(85, 8, 0, 0.54);
+  box-shadow: 0 2px 2px 0 rgba(85, 8, 0, 0.54);
 }
 
 .button:hover,
 .button:focus {
   color: #fefefe;
   background-image: linear-gradient(#f58669, #ec6f5e);
-  box-shadow: 0px 1px 2px 0 #ac1000;
+  box-shadow: 0 1px 2px 0 #ac1000;
 }
 
 .button:active {
   color: #fceeec;
 
   background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.07));
-  box-shadow: inset 0px 2px 2px 0 #942718;
+  box-shadow: inset 0 2px 2px 0 #942718;
 }
 
 /* Элементы слайдера */
@@ -111,8 +111,6 @@ img {
   background-image: url("../img/slider-1.png");
   background-repeat: no-repeat;
   background-position: top center;
-
-  transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 
 .wrapper {
@@ -182,7 +180,7 @@ input[type="radio"].visually-hidden {
   display: flex;
   flex-wrap: wrap;
 
-  max-width: 550px; /*Есть разница, что прописывать -- максимальную или обычную ширину?*/
+  max-width: 550px;
 }
 
 .site-navigation a {
@@ -194,7 +192,7 @@ input[type="radio"].visually-hidden {
 
   margin-right: 2px;
 
-  white-space: nowrap;/* Не придумала, как еще сделать, чтобы ширина меню зависела от содержимого,  при этом не переносились слова. Можно еще втавлять неразрываный пробел прымо в текст: вроде должно спасти от чрезмерного растягивания слишком длинными пунктами меню, но они вряд ли появятся, а тому, кто будет наполнять сайт, больше мороки.*/
+  white-space: nowrap;
 }
 
 .site-navigation-link span {
@@ -212,7 +210,7 @@ input[type="radio"].visually-hidden {
 
 .site-navigation-link > a:hover,
 .site-navigation-link > a:focus,
-.site-navigation-link:hover > a, /* Выделение родительского пункта меню при переходе в подменю. Подозреваю, по уму делается назначение ему класса current через js, но пока так. */
+.site-navigation-link:hover > a,
 .site-navigation-link:focus > a,
 .site-navigation-link:focus-within > a {
   color: #333333;
@@ -239,7 +237,7 @@ input[type="radio"].visually-hidden {
 
 .site-navigation-link > a:active {
   background-color: #ededed;
-  box-shadow: inset 0px 2px 1px 0 #696969;
+  box-shadow: inset 0 2px 1px 0 #696969;
 }
 
 .site-navigation-current > a {
@@ -265,7 +263,7 @@ input[type="radio"].visually-hidden {
 
 .site-navigation-sub,
 .modal {
-  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .site-navigation-sub a {
@@ -289,7 +287,7 @@ input[type="radio"].visually-hidden {
 
 .site-navigation-sub-link:first-child a,
 .site-navigation-sub-link:last-child a {
-  padding-bottom: 12px; /*Меню не попадает в макет и не понятно, как сделать, чтобы попадало. У последнего пункта нижний отступ увеличен, чтобы лучше смотрелось, но при наведении текст должен быть по центру цветной плашки-выделения. Этого можно добиться только сделав нижний (остающийся белым) паддинг самому списку, но это, кажется, противоречит стилю меню. Пока сделала среднее: увеличила последнему пункту нижний паддинг настолько, чтобы его несимметричность не слишком бросалась в глаза при наведении, но при этом чтобы размер попал с допустимой погрешностью в макет*/
+  padding-bottom: 12px;
 }
 
 .site-navigation-sub-link:first-child a {
@@ -413,7 +411,14 @@ input[type="radio"].visually-hidden {
   background-image: url("../img/basket.svg");
 }
 
-.user-navigation-link > a.basket-full::before {
+.user-navigation-link > a.basket:hover::before,
+.user-navigation-link > a.basket:focus::before {
+  background-image: url("../img/basket-black.svg");
+}
+
+.user-navigation-link > a.basket-full::before,
+.user-navigation-link > a.basket-full:hover::before,
+.user-navigation-link > a.basket-full:focus::before   {
   background-image: url("../img/basket-red.svg");
 }
 
@@ -615,22 +620,22 @@ input[type="radio"].visually-hidden {
 
   font-size: 32px;
   line-height: 44px;
-  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
 
   background-image: linear-gradient(to top, #e74a35, #f26843);
-  box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
+  box-shadow: 0 2px 2px 0 rgba(172, 16, 0, 0.64);
 }
 
 .slider .slider-button:hover,
 .slider .slider-button:focus {
   color: #ffffff;
   background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
-  box-shadow: 0px 2px 2px 0 #ac1000;
+  box-shadow: 0 2px 2px 0 #ac1000;
 }
 
 .slider .slider-button:active {
   color: #fceeec;
-  box-shadow: inset 0px 2px 2px 0 #942718;
+  box-shadow: inset 0 2px 2px 0 #942718;
 }
 
 .slider-controls {
@@ -792,7 +797,7 @@ input[type="radio"].visually-hidden {
 
   border-radius: 5px;
   background-color: rgba(225, 225, 225, 0.2);
-  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
   z-index: -10;
 }
 
@@ -844,7 +849,7 @@ input[type="radio"].visually-hidden {
   margin-top: 6px;
   margin-bottom: 10px;
 
-  font-size: 16px; /*Инстпектор показывает, что размер 16рх наследуется от боди, но если явно не прописывать, то кегль явно больше. Не пойму, почему так. */
+  font-size: inherit;
   line-height: 22px;
   font-weight: 500;
   text-align: center;
@@ -864,7 +869,6 @@ input[type="radio"].visually-hidden {
 }
 
 .сatalog-button {
-  display: inline-block;
   padding-right: 18px;
   padding-left: 18px;
   margin-bottom: 20px;
@@ -1115,7 +1119,6 @@ input[type="radio"].visually-hidden {
 }
 
 .filter fieldset {
-  margin: 0;
   padding: 0;
 
   border: none;
@@ -1127,9 +1130,14 @@ input[type="radio"].visually-hidden {
 }
 
 .filter-item > label,
-.filter-item > legend {
+.filter-item > legend,
+.filter-item > p {
   margin-left: 15px;
   margin-bottom: 5px;
+}
+
+.filter-item > p {
+  margin-top: 0px;
 }
 
 .filter .container {
@@ -1289,7 +1297,7 @@ input[type="radio"].visually-hidden {
 .filter-input-radio:focus ~ label::before,
 .filter-input-checkbox:focus ~ label::before,
 .filter-input-checkbox:hover ~ label::before {
-  opacity: 1; /* Так себе доступность получается. Если не знаешь, на что смотреть, не увидишь выделения :( */
+  opacity: 1;
 }
 
 .filter-input-radio:disabled ~ label::before,
@@ -1320,7 +1328,7 @@ input[type="radio"].visually-hidden {
 .filter-button:active {
   background-color: #ededed;
   background-image: none;
-  box-shadow: inset 0px 2px 1px 0 #696969;
+  box-shadow: inset 0 2px 1px 0 #696969;
 }
 
 /* Пагинация */
@@ -1369,7 +1377,7 @@ input[type="radio"].visually-hidden {
 .pagination-link a:active {
   color: #000000;
 
-  background-color: #ffffff; /*А вот снимать выделение с текущей кнопки во время нажатия другой, видимо, только JS.*/
+  background-color: #ffffff;
 }
 
 .pagination-link:first-child a,
@@ -1498,7 +1506,7 @@ input[type="radio"].visually-hidden {
 
 .social-button:hover path,
 .social-button:focus path {
-  fill: rgba(225, 225, 225);
+  fill: rgb(225, 225, 225);
 }
 
 .footer-navigation {
