@@ -10,6 +10,10 @@ body {
   background-color: #849d8f;
 }
 
+:focus {
+  outline: 0;
+}
+
 
 a {
   color: #ffffff;
@@ -24,6 +28,11 @@ a:active {
 
   border-bottom-color: #ffbc9e;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  }
 
 .theme-light {
   color: #323232;
@@ -46,8 +55,10 @@ a:active {
 }
 
 .button {
-  font: inherit;
+  display: inline-block;
+  padding: 11px 24px 11px 22px;
 
+  font: inherit;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
@@ -64,7 +75,7 @@ a:active {
 .button:hover,
 .button:focus {
   color: #fefefe;
-  background-image: linear-gradient(to top, #e74a35, #f26843), linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  background-image: linear-gradient(#f58669, #ec6f5e);
   box-shadow: 0px 1px 2px 0 #ac1000;
 }
 
@@ -75,22 +86,59 @@ a:active {
   box-shadow: inset 0px 2px 2px 0 #942718;
 }
 
+/* Элементы слайдера */
+
+.site-wrapper::before,
+.site-wrapper::after {
+  content: "";
+
+  visibility: hidden;
+}
+
+.site-wrapper::before {
+  background-image: url("../img/slider-item2.png");
+}
+
+.site-wrapper::after {
+  background-image: url("../img/slider-item3.png");
+}
+
+.site-wrapper {
+  min-width: 1200px;
+  padding-top: 9px;
+
+  background-color: #849d8f;
+  background-image: url("../img/slider-1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
 .wrapper {
   width: 1200px;
   margin: 0 auto;
   padding: 0 27px;
-  box-sizing: border-box;
-  /*Временно */
-  /*outline: 1px dotted red;*/
 
+  box-sizing: border-box;
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
   position: absolute;
-  clip: rect(0 0 0 0);
+
   width: 1px;
   height: 1px;
   margin: -1px;
+  padding: 0;
+  border: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 
@@ -100,23 +148,24 @@ a:active {
 
 .main-header {
   position: relative;
-
-  margin-top: 9px;
 }
+
+ .inner-page .main-header {
+  margin-top: 9px;
+  margin-bottom: 23px;
+ }
 
 .main-header-logo {
   margin-right: 10px;
   border: none;
 }
 
-
 .main-navigation {
   display: flex;
+  align-items: center;
 
   font-weight: 700;
   line-height: 18px;
-   /*Временно */
-  /*outline: 1px solid blue;*/
 }
 
 .site-navigation,
@@ -124,30 +173,68 @@ a:active {
 .user-navigation,
 .modal {
   margin: 0;
-  padding: 0;
+  padding: 0 0 5px 0;
 
   list-style: none;
 }
 
 .site-navigation {
-  max-width: 550px;
+  display: flex;
+  flex-wrap: wrap;
 
-  /* Временно для сетки */
-  /*outline: 1px solid yellow;*/
+  max-width: 550px; /*Есть разница, что прописывать -- максимальную или обычную ширину?*/
 }
 
 .site-navigation a {
   border: none;
 }
 
+.site-navigation-link {
+  position: relative;
+
+  margin-right: 2px;
+
+  white-space: nowrap;/* Не придумала, как еще сделать, чтобы ширина меню зависела от содержимого,  при этом не переносились слова. Можно еще втавлять неразрываный пробел прымо в текст: вроде должно спасти от чрезмерного растягивания слишком длинными пунктами меню, но они вряд ли появятся, а тому, кто будет наполнять сайт, больше мороки.*/
+}
+
+.site-navigation-link span {
+  border-bottom: 1px solid rgba(225, 225, 225, 0.3);
+}
+
+.site-navigation-link a,
+.user-navigation-link > a {
+  display: block;
+}
+
+.site-navigation-link > a {
+  padding: 7px 13px;
+}
 
 .site-navigation-link > a:hover,
-.site-navigation-link > a:focus {
+.site-navigation-link > a:focus,
+.site-navigation-link:hover > a, /* Выделение родительского пункта меню при переходе в подменю. Подозреваю, по уму делается назначение ему класса current через js, но пока так. */
+.site-navigation-link:focus > a,
+.site-navigation-link:focus-within > a {
   color: #333333;
 
   background-color: #f7f6f3;
   border-radius: 20px 20px;
+}
 
+.site-navigation-link:hover .site-navigation-sub,
+.site-navigation-link:focus .site-navigation-sub,
+.site-navigation-sub:hover {
+  display: block;
+}
+
+.site-navigation-link:hover .site-navigation-sub:after,
+.site-navigation-link:focus .site-navigation-sub:after,
+.site-navigation-link:focus-within .site-navigation-sub:after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width:100%;
+  height: 5px;
 }
 
 .site-navigation-link > a:active {
@@ -162,10 +249,18 @@ a:active {
   border-radius: 20px 20px;
 }
 
-.site-navigation-sub{
-  border-radius: 3px;
+.site-navigation-sub {
+  position: absolute;
+  top: 37px;
+  left: -7px;
 
+  display: none;
+  padding-bottom: 0;
+
+  border-radius: 5px;
   background-color: #f8f7f4;
+
+  z-index: 100;
 }
 
 .site-navigation-sub,
@@ -173,8 +268,9 @@ a:active {
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
-
 .site-navigation-sub a {
+  padding: 8px 21px 8px 20px;
+
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
@@ -191,6 +287,35 @@ a:active {
   background-color: #f6b5a5;
 }
 
+.site-navigation-sub-link:first-child a,
+.site-navigation-sub-link:last-child a {
+  padding-bottom: 12px; /*Меню не попадает в макет и не понятно, как сделать, чтобы попадало. У последнего пункта нижний отступ увеличен, чтобы лучше смотрелось, но при наведении текст должен быть по центру цветной плашки-выделения. Этого можно добиться только сделав нижний (остающийся белым) паддинг самому списку, но это, кажется, противоречит стилю меню. Пока сделала среднее: увеличила последнему пункту нижний паддинг настолько, чтобы его несимметричность не слишком бросалась в глаза при наведении, но при этом чтобы размер попал с допустимой погрешностью в макет*/
+}
+
+.site-navigation-sub-link:first-child a {
+  position: relative;
+
+  font-weight: 700;
+
+  border-radius: 5px 5px 0 0;
+}
+
+.site-navigation-sub-link:first-child a:after { /*Многовато строчек ради одной линии, но не приумала ничего лучше. )*/
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 4%;
+
+  height: 1px;
+  width: 89%;
+
+  background-color: rgba(50, 50, 50, 0.2);
+}
+
+.site-navigation-sub-link:last-child a {
+  border-radius: 0 0 5px 5px;
+}
+
 .site-navigation-sub-current a {
   color: #ffffff;
   background-color: #d07058;
@@ -201,31 +326,95 @@ a:active {
   color: #000000;
 }
 
-.site-navigation-sub-link:first-child {
-  border-bottom: 1px solid rgba(50, 50, 50, 0.2);
-}
-
-.site-navigation-sub .important {
-  font-weight: 700;
-}
 
 /* Меню пользователя */
 
 .user-navigation {
+  display: flex;
+  flex-wrap: wrap;
+
   max-width: 420px;
   margin-left: auto;
-
-  /* Временно */
-  /*outline: 1px solid yellow;*/
 }
 
 .user-navigation-link > a {
+  position: relative;
+
   font-size: 14px;
   line-height: 16px;
+
+  padding: 8px 16px 8px 44px;
+  margin-left: 11px;
 
   background-color: rgba(225, 225, 225, 0.2);
   border-bottom: none;
   border-radius: 20px;
+}
+
+.user-navigation-link > a.search {
+  width: 0;
+  height: 16px;
+  padding-left: 16px;
+
+  border-radius: 50%;
+}
+
+.user-navigation-link > a.basket-full {
+  margin-left: 8px;
+}
+
+.user-navigation-link > a::before,
+.user-navigation-link > a::before {
+  content: "";
+
+  position: absolute;
+  top: 6px;
+  left: 16px;
+
+  width: 21px;
+  height: 19px;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.user-navigation-link > a.search::before {
+  top: 7px;
+  left: 8px;
+
+  width: 17px;
+  height: 17px;
+
+  background-image: url("../img/loupe.svg");
+}
+
+.user-navigation-link > a.search:hover::before,
+.user-navigation-link > a.search:focus::before {
+  background-image: url("../img/loupe-black.svg");
+}
+
+
+.user-navigation-link > a.login::before {
+  width: 21px;
+  height: 19px;
+
+  background-image: url("../img/entrance.svg");
+}
+
+.user-navigation-link > a.login:hover::before,
+.user-navigation-link > a.login:focus::before {
+  background-image: url("../img/entrance-black.svg");
+}
+
+.user-navigation-link > a.basket::before {
+  width: 21px;
+  height: 20px;
+
+  background-image: url("../img/basket.svg");
+}
+
+.user-navigation-link > a.basket-full::before {
+  background-image: url("../img/basket-red.svg");
 }
 
 .user-navigation-link > a:hover,
@@ -243,7 +432,7 @@ a:active {
   right: 27px;
   transform: translateY(100%);
 
-  width: 166px;
+  min-width: 200px;
   margin: 0;
 
   font-size: 14px;
@@ -252,13 +441,16 @@ a:active {
 
   text-align: right;
 
-      /*Временно */
-  outline: 1px solid green;
+  z-index: 20;
+}
+
+.inner-page .main-header-schedule {
+  bottom: 4px;
 }
 
 .main-header-phone-number a {
   font-size: 22px;
-  line-height: 24px;
+  line-height: 34px; /*Судя по макету, должно быть 24, но тогда не попадает в размер.*/
 
   border-bottom: none;
 }
@@ -276,8 +468,12 @@ a:active {
   line-height: 24px;
 }
 
-.modal input,
-.modal textarea {
+/*.modal */input,
+/*.modal */textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 14px;
+
   font-size: 14px;
   line-height: 24px;
   vertical-align: middle;
@@ -286,37 +482,47 @@ a:active {
 
   background-color: #ffffff;
   border: solid 1px #d3d3d2;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
-.modal input:hover,
-.modal textarea:hover {
+/*.modal */input:hover,
+/*.modal */textarea:hover {
   box-shadow: 0 0 0 2px rgba(154, 154, 154, 0.52) inset;
   border-color: transparent;
 }
 
-.modal input:focus,
-.modal textarea:focus,
-.modal input:active,
-.modal textarea:active  {
+/*.modal */input:focus,
+/*.modal*/ textarea:focus,
+/*.modal*/ input:active,
+/*.modal*/ textarea:active  {
   font-weight: 700;
 
   box-shadow: 0 0 0 2px rgba(46, 136, 228, 0.52) inset;
   border-color: transparent;
 }
 
-.modal input::placeholder,
-.modal textarea::placeholder  {
+/*.modal*/ input::placeholder,
+/*.modal*/ textarea::placeholder  {
    font-weight: 400;
    color: #999999;
 }
 
 .user-navigation-search-popup {
+  width: 310px;
   padding: 20px 15px;
 }
 
 .user-navigation-login-popup {
-  padding: 20px 18px;
+  width: 240px;
+  padding: 20px 17px 20px 19px;
+}
+
+.user-navigation-login-popup p {
+  margin: 0;
+}
+
+.user-navigation-login-popup p:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .user-navigation-basket-popup {
@@ -340,7 +546,11 @@ a:active {
 /* ------ Main ------ */
 
 .breadcrumbs {
-  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  max-width: 855px;
+  margin: 0 0 3px 0;
   padding: 0;
 
   font-size: 14px;
@@ -348,28 +558,65 @@ a:active {
   list-style: none;
 }
 
+.breadcrumbs-link {
+  position: relative;
+  margin-right: 20px;
+}
+
+.breadcrumbs-link::after {
+  position: absolute;
+  right: -14px;
+
+  content: "»";
+}
+
+.inner-page h1 {
+  margin: 0 0 26px;
+
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: 700;
+}
+
+/* Слайдер */
+
+.slider {
+  position: relative;
+
+  padding-top: 319px;
+
+  text-align: center;
+  color: #ffffff;
+}
+
 .slider-list {
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
 
-.slider-item-header {
+.slider-item {
+  display: none;
+}
+
+.slider-item-title {
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+
   font-size: 60px;
   line-height: 60px;
   font-weight: 700;
-  text-align: center;
-}
-
-.slider-controls {
-  list-style: none;
 }
 
 .slider .slider-button {
+  padding: 9px 41px 10px 41px;
+
   font-size: 32px;
   line-height: 44px;
-
   text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
+
   background-image: linear-gradient(to top, #e74a35, #f26843);
   box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
 }
@@ -377,8 +624,7 @@ a:active {
 .slider .slider-button:hover,
 .slider .slider-button:focus {
   color: #ffffff;
-
-  background-image: linear-gradient(to top, #e74a35, #f26843), linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
   box-shadow: 0px 2px 2px 0 #ac1000;
 }
 
@@ -387,22 +633,79 @@ a:active {
   box-shadow: inset 0px 2px 2px 0 #942718;
 }
 
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 27px;
+  z-index: 20;
+
+  font-size: 0;
+}
+
+.slider-controls label {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+
+  vertical-align: top;
+
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#product-1:checked ~ .site-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/slider-1.png");
+}
+
+#product-2:checked ~ .site-wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/slider-2.png");
+}
+
+#product-3:checked ~ .site-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/slider-3.png");
+}
+
+#product-1:checked ~ .site-wrapper #slide1,
+#product-2:checked ~ .site-wrapper #slide2,
+#product-3:checked ~ .site-wrapper #slide3 {
+  display: block;
+}
+
+#product-1:checked ~ .site-wrapper label[for="product-1"],
+#product-2:checked ~ .site-wrapper label[for="product-2"],
+#product-3:checked ~ .site-wrapper label[for="product-3"] {
+  background-color: #ffffff;
+}
+
+#product-1:hover ~ .site-wrapper label[for="product-1"],
+#product-2:hover ~ .site-wrapper label[for="product-2"],
+#product-3:hover ~ .site-wrapper label[for="product-3"] {
+  background-color: rgba(248, 247, 244, 0.4);
+}
+
+/* Спецпредложения */
+
 .special-offers {
-  margin-bottom: 40px;
+  margin: 42px auto 40px;
 }
 
 .special-offers-blocks {
   display: flex;
   justify-content: space-between;
-
-   /*Временно */
-  /*outline: 2px solid blue;*/
   }
 
 .special-offers-block {
+  position: relative;
+
   width: 560px;
   height: 229px;
-  padding: 18px 20px 23px 20px;
+  padding: 16px 21px 23px 19px;
   box-sizing: border-box;
 
   font-size: 18px;
@@ -410,27 +713,36 @@ a:active {
   font-weight: 700;
   color: #ffffff;
 
-  background-color: #9d8b84;
+  background-color: #000000;
   border-radius: 15px;
-
-  /*Временно */
-  /*outline: 1px solid yellow;*/
 }
 
-.special-offer-header {
-  margin-top: 0;
+.special-offers-block p {
+  margin-top: 15px;
+}
+
+.special-offer-title {
+  margin: 0;
 
   font-size: 35px;
   line-height: 41px;
 }
 
+.special-offers-button {
+  position: absolute;
+  bottom: 23px;
+  right: 21px;
+}
+
 .raspberry {
+  background-color: #9d8b84;
   background-image: url("../img/offer-background-1.jpg");
   background-position: 0 0;
   background-repeat: no-repeat;
 }
 
 .chocolate {
+  background-color: #5b5447;
   background-image: url("../img/offer-background-2.jpg");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -438,10 +750,6 @@ a:active {
 
 
 /* Карточка товара */
-
-.catalog {
-  margin-bottom: 25px;
-}
 
 .catalog-list {
   display: flex;
@@ -455,11 +763,48 @@ a:active {
 }
 
 .catalog-item {
+  position: relative;
   width: 267px;
-  margin-bottom: 33px;
+  margin-bottom: 29px;
+}
 
-  /*Временно */
-  /*outline: 1px solid yellow;*/
+.catalog-item:hover,
+.catalog-item:focus {
+  z-index: 50;
+}
+
+.catalog-item:hover::after,
+.catalog-item:hover .container,
+.catalog-item:focus::after,
+.catalog-item:focus .container {
+  display: block;
+}
+
+.catalog-item::after {
+  display: none;
+
+  position: absolute;
+  top: -6px;
+  left: -13px;
+  content: "";
+  width: 293px;
+  height: 405px;
+
+  border-radius: 5px;
+  background-color: rgba(225, 225, 225, 0.2);
+  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+  z-index: -10;
+}
+
+.catalog-item-bestseller::before {
+  position: absolute;
+  content: "";
+  width: 61px;
+  height: 61px;
+
+  border-radius: 50%;
+  background-color: #ffffff;
+  background-image: url("../img/hit.svg");
 }
 
 .catalog-item-img {
@@ -467,6 +812,10 @@ a:active {
 }
 
 .catalog-item-price {
+  position: absolute;
+  left: -1px;
+  top: 164px;
+
   font-size: 45px;
   line-height: 45px;
   font-weight: 700;
@@ -475,11 +824,50 @@ a:active {
 }
 
 .catalog-item-price-weight {
+  padding-left: 24px;
   font-size: 30px;
 }
 
+.catalog-item-price-weight::before {
+  position: absolute;
+  top: 6px;
+  left: 81px;
+
+  content: "";
+  width: 31px;
+  height: 36px;
+
+  background-image: url("../img/ruble.svg");
+}
+
 .catalog-item h3 {
+  margin-top: 6px;
+  margin-bottom: 10px;
+
+  font-size: 16px; /*Инстпектор показывает, что размер 16рх наследуется от боди, но если явно не прописывать, то кегль явно больше. Не пойму, почему так. */
+  line-height: 22px;
+  font-weight: 500;
   text-align: center;
+}
+
+
+.catalog-item .container {
+  display: none;
+  position: absolute;
+  left: -13px;
+
+  width: 293px;
+
+  text-align: center;
+
+  z-index: 10;
+}
+
+.сatalog-button {
+  display: inline-block;
+  padding-right: 18px;
+  padding-left: 18px;
+  margin-bottom: 20px;
 }
 
 /* Преимущества */
@@ -491,13 +879,20 @@ a:active {
 
 .features .container {
   margin: 0;
-  padding: 30px 20px 20px;
+  padding: 25px 20px 15px;
 
   background-color: #E9DCC2;
   background-image: url("../img/features-background-pattern.jpg");
   background-repeat: repeat;
   border-radius: 15px;
 
+}
+
+.features-lead {
+  margin: 0 0 8px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
 }
 
 .features-list {
@@ -511,20 +906,33 @@ a:active {
   list-style: none;
 }
 
-.features-lead {
-  margin: 0 0 10px 0;
-
-  font-size: 24px;
-  line-height: 30px;
-  font-weight: 500;
+.feature-item {
+  width: 485px;
+  padding-left: 56px;
 }
 
-.feature-item {
-  width: 483px;
-  padding-left: 58px;
+.feature-item.tech {
+  background-image: url("../img/ice-cream.svg");
+  background-repeat: no-repeat;
+}
 
-  /* Временно */
-/*  outline: 1px solid red;*/
+.feature-item.source {
+  background-image: url("../img/cow.svg");
+  background-repeat: no-repeat;
+}
+
+.feature-item.milk {
+  background-image: url("../img/eco.svg");
+  background-repeat: no-repeat;
+}
+
+.feature-item.pack {
+  background-image: url("../img/thermometer.svg");
+  background-repeat: no-repeat;
+}
+.feature-item p {
+  margin-top: 12px;
+  margin-bottom: 10px;
 }
 
 /* Блог и рассылка */
@@ -537,8 +945,7 @@ a:active {
 
 .blog-news {
   width: 560px;
-  min-height: 220px;
-  padding: 20px;
+  padding: 10px 20px;
   box-sizing: border-box;
 
   background-color: #ffffff;
@@ -549,11 +956,17 @@ a:active {
   border-radius: 15px;
 }
 
-.blog-news-main-header {
+.blog-news-main-title {
+  margin-bottom: 4px;
+
   font: inherit;
 }
 
-.blog-news-item-header a {
+.blog-news-item-title {
+  margin: 0;
+}
+
+.blog-news-item-title a {
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
@@ -562,9 +975,9 @@ a:active {
   border-width: 2px;
 }
 
-.blog-news-item-header a:hover,
-.blog-news-item-header a:focus,
-.blog-news-item-header a:active {
+.blog-news-item-title a:hover,
+.blog-news-item-title a:focus,
+.blog-news-item-title a:active {
   border-width: 2px;
 
 }
@@ -587,11 +1000,27 @@ a:active {
 }
 
 .subscription .container {
-  min-height: 190px;
-  padding: 20px;
+  position: relative;
+  padding: 13px 20px 99px;
 
   background-color: #f8f7f4;
   border-radius: 15px;
+}
+
+.subscription input {
+  position: absolute;
+  bottom: 35px;
+  left: 20px;
+
+  width: 368px;
+}
+
+.subscription button {
+  position: absolute;
+  bottom: 36px;
+  right: 21px;
+
+  padding: 10px 20px;
 }
 
 /* Контакты */
@@ -601,13 +1030,9 @@ a:active {
 
   display: block;
   width: 100%;
-  height: 430px;
+  height: 428px;
   margin: 40px auto 0;
   overflow: hidden;
-
-/*  background-image: url("../img/map.png");
-  background-position: 0 0;
-  background-repeat: no-repeat;*/
 }
 
 
@@ -636,57 +1061,57 @@ a:active {
   max-width: 500px;
   max-height: 400px;
   margin: 0;
-  padding: 25px;
+  padding: 29px 25px;
 
   border-radius: 15px;
 }
 
-.contacts .address,
-.contacts a  {
+.contacts-info .address {
+  display: block;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
 }
 
+.contacts-info .phone-number  {
+  display: block;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+
+  margin-top: 3px;
+  margin-bottom: -18px;
+}
+
+.contacts-info button {
+  margin-top: 24px;
+  padding-right: 29px;
+  padding-left: 29px;
+}
+
 .contacts a {
   line-height: 22px;
   border: none;
-
 }
 
 
 
 /* ------ Каталог ------ */
 
-.main h1 {
-  font-size: 35px;
-  line-height: 41px;
-}
+/* Фильтры */
 
 .filter {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: flex-end;
 
-  margin-bottom: 40px;
+  margin-bottom: 23px;
 
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
 
-}
-
-.filter .containter {
-  font-size: 16px;
-  line-height: 18px;
-
-  background-color: rgba(255,255, 255, 0.2);
-  border-radius: 20px;
-}
-
-.filter ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .filter fieldset {
@@ -696,27 +1121,187 @@ a:active {
   border: none;
 }
 
+.filter-item {
+  margin-right: 14px;
+  margin-bottom: 17px
+}
+
+.filter-item > label,
+.filter-item > legend {
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+.filter .container {
+  font-size: 16px;
+  line-height: 18px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
 
 .filter select {
+  position: relative;
+
+  min-width: 162px;
+  margin-top: 6px;
+  padding: 8px 45px 9px 12px;
+
   font: inherit;
   color: #ffffff;
 
-  background-color: rgba(255,255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
+  background-image: url("../img/select-arrow.svg");
+  background-size: 11px 10px;
+  background-repeat: no-repeat;
+  background-position: 168px 50%;
   border: none;
   border-radius: 20px;
 
- /* -webkit-appearance: none;
+  -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;*/
+  appearance: none;
 }
 
 .filter select:hover,
 .filter select:focus {
   color: #323232;
+  background-image: url("../img/icon-down-dir.svg");
+  background-size: 9px 5px;
+  background-position: 170px 50%;
+}
+
+
+.filter-item-price {
+  min-width: 220px;
+}
+
+.filter-item-price .container {
+  margin-top: 6px;
+}
+
+.range-controls {
+  position: relative;
+  padding: 16px 22px;
+}
+
+.range-controls .scale {
+  position: relative;
+
+  width: 176px;
+  height: 4px;
+  background-color: rgba(248, 247, 244, 0.5);
+}
+
+.range-controls .bar {
+  position: absolute;
+  left: 31px;
+
+  width: 50%;
+  height: 4px;
+  background-color: #f8f7f4;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 9px;
+
+  width: 5px;
+  height: 5px;
+  padding: 0;
+
+  border: 7px solid #f8f7f4;
+  background-color: #9bb1a5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.range-controls .toggle-min {
+  left: 35px;
+}
+
+.range-controls .toggle-max {
+  left: 133px;
+}
+
+
+.filter ul {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 9px 16px 9px 14px;
+  list-style: none;
+}
+
+
+.filter-item-topping ul {
+  min-width: 703px;
+  box-sizing: border-box;
+  padding-left: 17px
+}
+
+.filter-option label {
+  position: relative;
+  padding-left: 30px;
+}
+
+.filter-option:not(:last-child) {
+  margin-right: 20px;
+}
+
+.filter-input-radio ~ label::before,
+.filter-input-checkbox ~ label::before {
+  content: "";
+
+  position: absolute;
+  top: -2px;
+  left: -1px;
+  width: 22px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.filter-input-radio ~ label::before {
+  background-image: url("../img/radio-off.svg");
+  background-size: 22px 22px;
+}
+
+.filter-input-checkbox ~ label::before {
+  top: -1px;
+  background-image: url("../img/checkbox-off.svg");
+  background-size: 20px 20px;
+}
+
+.filter-input-radio:checked ~ label::before {
+  background-image: url("../img/radio-on.svg");
+}
+
+.filter-input-checkbox:checked ~ label::before {
+  background-image: url("../img/checkbox-on.svg");
+  background-size: 24px 20px;
+}
+
+.filter-input-radio:hover ~ label::before,
+.filter-input-radio:focus ~ label::before,
+.filter-input-checkbox:focus ~ label::before,
+.filter-input-checkbox:hover ~ label::before {
+  opacity: 1; /* Так себе доступность получается. Если не знаешь, на что смотреть, не увидишь выделения :( */
+}
+
+.filter-input-radio:disabled ~ label::before,
+.filter-input-checkbox:disabled ~ label::before {
+  opacity: 0.4;
 }
 
 .filter-button {
   font: inherit;
+
+  margin-bottom: 17px;
+  padding: 10px 34px;
 
   background-color: rgba(255,255, 255, 0.2);
   background-image: none;
@@ -738,15 +1323,38 @@ a:active {
   box-shadow: inset 0px 2px 1px 0 #696969;
 }
 
-.catalog {
-/*  border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
-}
+/* Пагинация */
 
 .pagination {
+  display: flex;
+  justify-content: flex-end;
   list-style: none;
+
+  margin-top: 43px;
+  margin-right: -11px;
+  margin-bottom: 30px;
+
 }
 
+.pagination-link:first-child {
+  margin-right: 3px;
+}
+
+.pagination-link:last-child {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+
 .pagination-link a {
+  display: block;
+  width: 21px;
+  height: 21px;
+  padding: 3px;
+  margin-right: 2px;
+
+  text-align: center;
+
   border: none;
   border-radius: 50%;
 }
@@ -758,6 +1366,65 @@ a:active {
   background-color: rgba(255,255, 255, 0.2);
 }
 
+.pagination-link a:active {
+  color: #000000;
+
+  background-color: #ffffff; /*А вот снимать выделение с текущей кнопки во время нажатия другой, видимо, только JS.*/
+}
+
+.pagination-link:first-child a,
+.pagination-link:last-child a {
+  position: relative;
+}
+
+.pagination-link:first-child a::before,
+.pagination-link:last-child a::before {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: transparent;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  transform: rotate(-225deg);
+}
+
+.pagination-link:last-child a::before {
+  top: 10px;
+  right: 10px;
+  transform: rotate(-45deg);
+}
+
+.pagination-link:first-child a:active::before,
+.pagination-link:last-child a:active::before {
+  border-color: #000000;
+}
+
+
+
+/*
+Недоделанный вариант с svg. Показалось, что многовато мороки с 4 картинками для разных состояний.
+
+.pagination-link:first-child a,
+.pagination-link:last-child a {
+  background-image: url("../img/icon-right-small.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.pagination-link:first-child a {
+  transform: rotate(180deg);
+
+  margin-right: 8px;
+}
+
+.pagination-link:last-child a {
+  margin-left: 4px;
+}
+*/
 
 .pagination-link .current {
   color: #323232;
@@ -765,43 +1432,110 @@ a:active {
   background-color: #ffffff;
 }
 
-.pagination-link .disabled {
-  color: rgba(255,255, 255, 0.2);
+.pagination-link .disabled,
+.pagination-link .disabled:hover,
+.pagination-link .disabled:focus {
+  opacity: 0.2;
+  background-color: transparent;
 }
 
+.pagination-link a.disabled:active::before {
+  border-color: #ffffff;
+}
 
 
 /* ------ Footer ------ */
 
-.footer {
+.footer-container {
   display: flex;
   justify-content: space-between;
-}
+  align-items: center;
 
-.inner-page .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 7px;
 
-}
-
-.footer-socials ul,
-.footer-navigation ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.footer a {
   font-size: 13px;
   line-height: 18px;
 }
 
-.footer-navigation-link-suppliers a {
+.inner-page .footer-container {
+  border-top: 1px solid rgba(225, 225, 225, 0.3);
+}
+
+.footer-socials ul,
+.footer-navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-socials ul {
+  max-width: 350px;
+  margin-right: 26px;
+  margin-left: 1px;
+  padding-top: 4px;
+}
+
+.footer-socials .social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 32px;
+  height: 32px;
+  margin-right: 11px;
+
+  border: 3px solid rgba(225, 225, 225, 0.5);
+  border-radius: 50%;
+
+  box-shadow: 0 0 1px 1px rgba(225, 225, 225, 0.5) inset; /* Чтобы избежать зазоров между рамкой и иконкой на маленьком масштабе страницы, когда иконка в центре скачет мнемного туда-сюда. Может быть, есть способ лучше. */
+}
+
+.social-button path {
+  fill: rgba(225, 225, 225, 0.8);
+}
+
+.social-button:hover path,
+.social-button:focus path {
+  fill: rgba(225, 225, 225);
+}
+
+.footer-navigation {
+  max-width: 350px;
+  padding-left: 30px;
+  padding-right: 14px;
+}
+
+.footer-navigation-link {
+  min-width: 130px;
+  margin-right: 12px;
+  margin-top: 4px;
+}
+
+
+.footer-navigation .heart {
+  position: absolute;
+  top: 3px;
+  left: -22px;
+}
+
+.footer-navigation-link-suppliers {
+  position: relative;
   font-weight: 700;
 }
 
-.footer-copyright,
-.footer-copyright a {
+.footer-navigation-link-suppliers:hover path,
+.footer-navigation-link-suppliers:focus path {
+  fill: #ffbc9e;
+}
+
+.footer-copyright {
   font-size: 12px;
+}
+
+.footer-copyright img {
+  margin-left: 3px;
 }
 
 
@@ -824,8 +1558,6 @@ a:active {
 .modal-feedback input,
 .modal-feedback textarea {
   font-size: 16px;
-
-
 }
 
 
