@@ -5,7 +5,7 @@
     <title>Gllacy | Онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
 
   <body>
@@ -27,22 +27,23 @@
               </ul>
             </li>
             <li class="site-navigation-item"><a class="site-navigation-link" href="delivery-and-payment.html"><span>Доставка и оплата</span></a></li>
+
             <li class="site-navigation-item"><a class="site-navigation-link" href="about.html"><span>О Компании</span></a></li>
           </ul>
 
           <ul class="user-navigation">
             <li class="user-navigation-item"><a class="user-navigation-link search" href="search.html"><span class="visually-hidden">Поиск</span></a>
-      <!--         <ul class="modal theme-light user-navigation-search-popup">
+              <ul class="modal theme-light user-navigation-search-popup popup">
                 <li>
                   <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
                     <label class="visually-hidden" for="search-field">Поиск</label>
                     <input id="search-field" type="search" name="search" placeholder="Что ищем?" size="30">
                   </form>
                 </li>
-              </ul> -->
+              </ul>
             </li>
             <li class="user-navigation-item"><a class="user-navigation-link login" href="login.html">Вход</a>
-            <!--   <ul class="modal theme-light user-navigation-login-popup">
+              <ul class="modal theme-light user-navigation-login-popup popup">
                 <li>
                   <form class="login-form" method="post" action="https://echo.htmlacademy.ru">
                     <h2 class="visually-hidden">Форма авторизации</h2>
@@ -61,9 +62,9 @@
                     </p>
                   </form>
                 </li>
-              </ul> -->
+              </ul>
             </li>
-            <li class="user-navigation-item"><a class="user-navigation-link basket" href="basket.html">Пусто</a></li>
+            <li class="user-navigation-item"><a class="user-navigation-link basket" href="basket.html">Пусто</a></li> <!-- Паддинги ссылки выпадают за границы li, и в итоге если элементов становится больше и они переносятся на новую строку, то начинают наслаиваться друг на друга по вертикали. Не пойму, почему вообще это может произойти.  -->
           </ul>
         </nav>
         <p class="main-header-schedule">С 10 до 20, ежедневно<br>
@@ -227,7 +228,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13"><path fill="#FFF" d="M10.799 0c-1.35 0-2.551.65-3.3 1.661A4.097 4.097 0 0 0 4.199 0C1.875 0 0 1.806 0 4.044 0 7.223 7.499 13 7.499 13s7.499-5.777 7.499-8.956C14.998 1.806 13.123 0 10.799 0z"/>
                     </svg>
                   </span>
-                  <a href="for-suppliers.html">Для поставщиков</a></li>
+                  <a href="for-suppliers.html">Для поставщиков</a></li> <!-- Очень хрупким получается это меню на флексах. Может, стоит переделать как-то? -->
                 <li class="footer-navigation-link" ><a href="documents.html">Наши документы</a></li>
                 <li class="footer-navigation-link"><a href="manufactoring.html">О производстве</a></li>
                 <li class="footer-navigation-link"><a href="eco.html">Экологические стандарты</a></li>
@@ -241,7 +242,8 @@
         </div>
       </footer>
 
-     <!--  <section class="modal theme-light modal-feedback">
+      <section class="modal theme-light modal-feedback">
+        <button class="close-button modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
         <h2 class="visually-hidden">Форма обратной связи</h2>
         <span class="important">Мы обязательно вам ответим!</span>
         <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
@@ -257,11 +259,11 @@
           </div>
           <p class="feedback-form-user-message feedback-item">
               <label class="visually-hidden" for="feedback-message">Тект сообщения</label>
-              <textarea name="message" id="feedback-message" cols="50" rows="6" placeholder="Напишите что-нибудь..."></textarea>
+              <textarea name="message" id="feedback-message" cols="50" rows="4" placeholder="Напишите что-нибудь..."></textarea>
           </p>
           <button class="button" type="submit">Отправить</button>
         </form>
-      </section> -->
+      </section>
     </div>
   </body>
 </html>
