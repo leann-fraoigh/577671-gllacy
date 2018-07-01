@@ -386,6 +386,7 @@ input[type="radio"].visually-hidden {
 
   max-width: 420px;
   margin-left: auto;
+  padding-bottom: 0;
 }
 
 .user-navigation-item {
@@ -400,6 +401,7 @@ input[type="radio"].visually-hidden {
   font-size: 14px;
   line-height: 16px;
 
+  display: inline-block;
   padding: 8px 16px 8px 44px;
   margin-left: 10px;
 
@@ -410,7 +412,7 @@ input[type="radio"].visually-hidden {
 
 .user-navigation-link.search {
   width: 0;
-  height: 16px;
+  height: 17px;
   padding-left: 16px;
 
   border-radius: 50%;
@@ -647,8 +649,8 @@ textarea::placeholder  {
 
 .close-button.basket-delete::before,
 .close-button.basket-delete::after {
-  top: 5px;
-  left: 0;
+  top: 8px;
+  right: 0;
 
   width: 15px;
   height: 1px;
@@ -656,7 +658,7 @@ textarea::placeholder  {
 
 .popup {
   position: absolute;
-  top: 30px;
+  top: 36px;
   right: 0;
 
   z-index: 150;
@@ -698,16 +700,17 @@ textarea::placeholder  {
 
 .user-navigation-basket-popup {
   min-width: 510px;
-  padding: 20px 15px 20px;
+  padding: 19px 15px 21px;
   text-align: right;
 }
 
 .user-navigation-basket-popup table {
+  padding-bottom: 5px;
   border-bottom: 1px solid #cacac7;
 }
 
 .basket-content td {
-  padding: 6px 17px 14px 12px;
+  padding: 8px 17px 10px 12px;
 
   text-align: left;
   vertical-align: top;
