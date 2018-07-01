@@ -411,9 +411,9 @@ input[type="radio"].visually-hidden {
 }
 
 .user-navigation-link.search {
-  width: 17px;
-  height: 17px;
-  padding-left: 16px;
+  width: 15px;
+  height: 15px;
+  padding: 9px;
 
   border-radius: 50%;
 }
