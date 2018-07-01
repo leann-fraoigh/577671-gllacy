@@ -244,8 +244,8 @@ input[type="radio"].visually-hidden {
   padding: 7px 13px;
 }
 
-.site-navigation-link:hover,
-.site-navigation-link:focus,
+/*.site-navigation-link:hover,
+.site-navigation-link:focus,*/
 .site-navigation-item:hover > .site-navigation-link,
 .site-navigation-item:focus > .site-navigation-link,
 .site-navigation-item:focus-within > .site-navigation-link {
@@ -395,6 +395,12 @@ input[type="radio"].visually-hidden {
   /*max-width: 420px;*/
 }
 
+.user-navigation-item:hover .popup,
+.user-navigation-item:focus .popup {
+  display: block;
+}
+
+
 .user-navigation-link {
   position: relative;
 
@@ -404,6 +410,7 @@ input[type="radio"].visually-hidden {
   display: inline-block;
   padding: 8px 16px 8px 44px;
   margin-left: 10px;
+  vertical-align: center;
 
   background-color: rgba(225, 225, 225, 0.2);
   border-bottom: none;
@@ -447,7 +454,8 @@ input[type="radio"].visually-hidden {
 }
 
 .user-navigation-link.search:hover::before,
-.user-navigation-link.search:focus::before {
+.user-navigation-link.search:focus::before,
+.user-navigation-item:hover .user-navigation-link.search::before  {
   background-image: url("../img/loupe-black.svg");
 }
 
@@ -460,7 +468,8 @@ input[type="radio"].visually-hidden {
 }
 
 .user-navigation-link.login:hover::before,
-.user-navigation-link.login:focus::before {
+.user-navigation-link.login:focus::before,
+.user-navigation-item:hover .user-navigation-link.login::before {
   background-image: url("../img/entrance-black.svg");
 }
 
@@ -472,20 +481,20 @@ input[type="radio"].visually-hidden {
 }
 
 .user-navigation-link.basket:hover::before,
-.user-navigation-link.basket:focus::before {
+.user-navigation-link.basket:focus::before,
+.user-navigation-item:hover .user-navigation-link.basket::before {
   background-image: url("../img/basket-black.svg");
 }
 
 .user-navigation-link.basket-full::before,
 .user-navigation-link.basket-full:hover::before,
-.user-navigation-link.basket-full:focus::before   {
+.user-navigation-link.basket-full:focus::before,
+.user-navigation-item:hover .user-navigation-link.basket-full::before  {
   background-image: url("../img/basket-red.svg");
 }
 
-.user-navigation-link:hover,
-.user-navigation-link:focus,
-.user-navigation-link:active,
-.user-navigation-link.basket-full {
+.user-navigation-item:hover > .user-navigation-link,
+.user-navigation-item:focus > .user-navigation-link {
   color: #323232;
 
   background-color: #f8f7f4;
@@ -660,6 +669,8 @@ textarea::placeholder  {
   position: absolute;
   top: 36px;
   right: 0;
+
+  display: none;
 
   z-index: 150;
 }
