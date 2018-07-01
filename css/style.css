@@ -411,7 +411,7 @@ input[type="radio"].visually-hidden {
 }
 
 .user-navigation-link.search {
-  width: 0;
+  width: 17px;
   height: 17px;
   padding-left: 16px;
 
@@ -1876,6 +1876,7 @@ textarea::placeholder  {
 }
 
 .modal-feedback textarea {
+  max-width: 428px;
   min-height: 155px;
 }
 
