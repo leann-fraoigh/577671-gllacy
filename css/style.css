@@ -1323,6 +1323,12 @@ textarea::placeholder  {
 .contaсts-map {
   display: block;
   margin: 0 auto;
+  border: 0;
+
+  background-image: url("../img/map.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 1200px 430px;
 }
 
 .contacts .container {
@@ -1860,7 +1866,10 @@ textarea::placeholder  {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); /*В макете она не по центру экрана ни по горизонтали, ни по вертикали. Это так и задумано?*/
+          transform: translate(-50%, -50%);
+
+  display: none;
+
   width: 428px;
   padding: 16px 25px 25px 24px;
 
@@ -1903,4 +1912,63 @@ textarea::placeholder  {
   position: absolute;
   bottom: 25px;
   right: 25px;
+}
+
+.modal-feedback-show {
+  display: block;
+}
+
+.modal-error {
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
+}
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate(-51%, -50%);
+            transform: translate(-51%, -50%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate(-49%, -50%);
+            transform: translate(-49%, -50%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate(-51%, -50%);
+            transform: translate(-51%, -50%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate(-49%, -50%);
+            transform: translate(-49%, -50%);
+  }
 }

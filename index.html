@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Gllacy | Онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
@@ -177,7 +177,8 @@
 
         <section class="contacts">
           <h2 class="visually-hidden wrapper">Контактная информация</h2>
-          <img class="contaсts-map" src="img/map.png" alt="Офис и магазин Gllacy на карте." width="1200" height="430">
+          <iframe class="contaсts-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.59910436516!2d30.32089461604308!3d59.93879418187623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0KDQvtGB0YHQuNGPLCAxOTExODY!5e0!3m2!1sru!2sno!4v1530503275942" width="1200" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
+         <!--  <img class="contaсts-map" src="img/map.png" alt="Офис и магазин Gllacy на карте." width="1200" height="430"> -->
           <div class="container wrapper">
             <p class="contacts-info theme-light">Адрес главного офиса<br>
             и&nbsp;оффлйн-магазина:<br>
@@ -228,7 +229,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13"><path fill="#FFF" d="M10.799 0c-1.35 0-2.551.65-3.3 1.661A4.097 4.097 0 0 0 4.199 0C1.875 0 0 1.806 0 4.044 0 7.223 7.499 13 7.499 13s7.499-5.777 7.499-8.956C14.998 1.806 13.123 0 10.799 0z"/>
                     </svg>
                   </span>
-                  <a href="for-suppliers.html">Для поставщиков</a></li> <!-- Очень хрупким получается это меню на флексах. Может, стоит переделать как-то? -->
+                  <a href="for-suppliers.html">Для поставщиков</a></li>
                 <li class="footer-navigation-link"><a href="eco.html">Экологические стандарты</a></li>
                 <li class="footer-navigation-link" ><a href="documents.html">Наши документы</a></li>
                 <li class="footer-navigation-link"><a href="manufactoring.html">О производстве</a></li>
@@ -250,20 +251,23 @@
           <div class="feedback-form-user-info">
             <p class="feedback-item">
               <label class="visually-hidden" for="feedback-name">Ваше имя</label>
-              <input id="feedback-name" type="text" name="name" placeholder="Как вас зовут?" required>
+              <input id="feedback-name" type="text" name="name" placeholder="Как вас зовут?">
             </p>
             <p class="feedback-item">
               <label class="visually-hidden" for="feedback-email">Ваша электронная почта</label>
-              <input id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?" required>
+              <input id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?">
             </p>
           </div>
           <p class="feedback-form-user-message feedback-item">
               <label class="visually-hidden" for="feedback-message">Тект сообщения</label>
-              <textarea name="message" id="feedback-message" cols="50" rows="4" placeholder="Напишите что-нибудь..." required></textarea>
+              <textarea name="message" id="feedback-message" cols="50" rows="4" placeholder="Напишите что-нибудь..."></textarea>
           </p>
           <button class="button" type="submit">Отправить</button>
         </form>
       </section>
     </div>
+
+    <script src="js/script.min.js"></script>
+
   </body>
 </html>
