@@ -5,10 +5,9 @@ var feedbackForm = feedbackModal.querySelector(".feedback-form");
 var feedbackNameInput = feedbackModal.querySelector("#feedback-name");
 var feedbackEmailInput = feedbackModal.querySelector("#feedback-email");
 var feedbackMessageInput = feedbackModal.querySelector("#feedback-message");
-var storage = localStorage.getItem("login");
-
 var isStorageSupport = true;
 var storage = "";
+var overlay = document.querySelector(".overlay");
 
 try {
   storage = localStorage.getItem("login");
@@ -19,6 +18,7 @@ try {
 feedbackButton.addEventListener("click", function(evt) {
   evt.preventDefault();
   feedbackModal.classList.add("modal-feedback-show");
+  overlay.classList.add("overlay-show");
   if (storage) {
     feedbackNameInput.value = storage;
     feedbackEmailInput.focus();
@@ -27,10 +27,18 @@ feedbackButton.addEventListener("click", function(evt) {
   }
 });
 
+overlay.addEventListener("click", function(evt){
+  evt.preventDefault();
+  feedbackModal.classList.remove("modal-feedback-show");
+  feedbackModal.classList.remove("modal-error");
+  overlay.classList.remove("overlay-show");
+});
+
 feedbackClose.addEventListener("click", function(evt) {
   evt.preventDefault();
   feedbackModal.classList.remove("modal-feedback-show");
   feedbackModal.classList.remove("modal-error");
+  overlay.classList.remove("overlay-show");
 });
 
 feedbackForm.addEventListener("submit", function (evt) {

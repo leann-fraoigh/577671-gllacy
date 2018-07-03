@@ -114,11 +114,11 @@ img {
 }
 
 .site-wrapper::before {
-  background-image: url("../img/slider-item2.png");
+  background-image: url("../img/slider-2.png");
 }
 
 .site-wrapper::after {
-  background-image: url("../img/slider-item3.png");
+  background-image: url("../img/slider-3.png");
 }
 
 .site-wrapper {
@@ -257,7 +257,8 @@ input[type="radio"].visually-hidden {
 
 .site-navigation-item:hover span,
 .site-navigation-item:focus span,
-.site-navigation-item:focus-within > span {
+.site-navigation-item:focus-within > span,
+.site-navigation-current span {
   border-bottom: none;
 }
 
@@ -520,6 +521,11 @@ input[type="radio"].visually-hidden {
   z-index: 20;
 }
 
+.main-header-phone-number {
+  display: block;
+}
+
+
 .main-header-phone-number a {
   font-size: 22px;
   line-height: 34px;
@@ -698,6 +704,8 @@ textarea::placeholder  {
 }
 
 .login-additional a {
+  max-width: 150px;
+
   line-height: 22px;
 }
 
@@ -1104,6 +1112,7 @@ textarea::placeholder  {
 }
 
 .catalog-item h3 {
+  max-width: 255px;
   margin-top: 6px;
   margin-bottom: 10px;
 
@@ -1427,13 +1436,15 @@ textarea::placeholder  {
 
 .filter-item {
   margin-left: 0;
-  margin-right: 14px;
+  margin-right: 16px;
   margin-bottom: 17px
 }
 
 .filter-item > label,
 .filter-item > legend,
 .filter-item > p {
+  display: block;
+
   margin-left: 15px;
   margin-bottom: 5px;
 }
@@ -1454,8 +1465,8 @@ textarea::placeholder  {
   position: relative;
 
   min-width: 162px;
-  margin-top: 6px;
-  padding: 8px 45px 9px 12px;
+/*  margin-top: 6px;*/
+  padding: 10px 50px 10px 15px;
 
   font: inherit;
   color: #ffffff;
@@ -1482,13 +1493,17 @@ textarea::placeholder  {
 }
 
 
+/*.filter-item-sorting select {
+  display: block;
+}*/
+
 .filter-item-price {
   min-width: 220px;
 }
-
+/*
 .filter-item-price .container {
   margin-top: 6px;
-}
+}*/
 
 .range-controls {
   position: relative;
@@ -1554,6 +1569,7 @@ textarea::placeholder  {
   min-width: 703px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding-right: 20px;
   padding-left: 17px
 }
 
@@ -1853,6 +1869,13 @@ textarea::placeholder  {
   font-size: 12px;
 }
 
+.footer-copyright > a:first-child {
+  display: block;
+  width: 108px;
+
+  border: none;
+}
+
 .footer-copyright img {
   margin-left: 3px;
 }
@@ -1877,7 +1900,7 @@ textarea::placeholder  {
   -webkit-box-shadow: none;
           box-shadow: none;
 
-  z-index: 150;
+  z-index: 250;
 }
 
 .modal-feedback .important {
@@ -1905,23 +1928,71 @@ textarea::placeholder  {
 }
 
 .feedback-form-user-message {
-  margin-bottom: 71px
+  margin-bottom: 24px
 }
 
 .modal-feedback .button {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
+  margin-left: 290px;
+  padding-left: 24px;
 }
 
 .modal-feedback-show {
   display: block;
+
+  -webkit-animation: bounce 0.6s;
+
+          animation: bounce 0.6s;
 }
 
 .modal-error {
   -webkit-animation: shake 0.6s;
           animation: shake 0.6s;
 }
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translate(-50%, -2000px);
+            transform: translate(-50%, -2000px);
+  }
+
+  70% {
+    -webkit-transform: translate(-50%, -20%);
+            transform: translate(-50%, -20%);
+  }
+
+  90% {
+    -webkit-transform: translate(-50%, -60%);
+            transform: translate(-50%, -60%);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translate(-50%, -2000px);
+            transform: translate(-50%, -2000px);
+  }
+
+  70% {
+    -webkit-transform: translate(-50%, -20%);
+            transform: translate(-50%, -20%);
+  }
+
+  90% {
+    -webkit-transform: translate(-50%, -60%);
+            transform: translate(-50%, -60%);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
 
 @-webkit-keyframes shake {
   0%,
@@ -1971,4 +2042,24 @@ textarea::placeholder  {
     -webkit-transform: translate(-49%, -50%);
             transform: translate(-49%, -50%);
   }
+}
+
+.overlay {
+  position: fixed;
+
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0,0,0,0.5);
+
+  z-index: 200;
+}
+
+.overlay-show {
+  display: block;
 }
