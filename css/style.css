@@ -33,21 +33,6 @@ a {
 }
 
 
-
-/*a {
-  color: #ffffff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(225, 225, 225, 0.3);
-}
-
-a:hover,
-a:focus,
-a:active {
-  color: #ffbc9e;
-
-  border-bottom-color: #ffbc9e;
-}*/
-
 img {
   max-width: 100%;
   height: auto;
@@ -151,6 +136,7 @@ img {
 }
 
 .wrapper {
+  display: block;
   width: 1200px;
   margin: 0 auto;
   padding: 0 27px;
@@ -184,10 +170,6 @@ input[type="radio"].visually-hidden {
 /* ------ Header ------ */
 
 /* Меню */
-
-main .wrapper {
-  display: block;
-}
 
 .main-header {
   position: relative;
@@ -250,8 +232,6 @@ main .wrapper {
 
   max-width: 550px;
   margin-right: 2px;
-
-  /*white-space: nowrap;*/
 }
 
 .site-navigation-title {
@@ -417,7 +397,6 @@ main .wrapper {
 .user-navigation-item {
   position: relative;
 
-  /*max-width: 420px;*/
 }
 
 .user-navigation-item:hover .popup,
@@ -1081,7 +1060,6 @@ textarea::placeholder  {
   left: -13px;
   content: "";
   width: 293px;
-/*height: 405px;*/
   height: calc(100% + 72px);
 
   border-radius: 5px;
@@ -1139,9 +1117,8 @@ textarea::placeholder  {
 }
 
 .catalog-item h3 {
-  max-width: 258px;
-  margin-top: 6px;
-  margin-bottom: 10px;
+  max-width: 256px;
+  margin: 7px auto 10px;
 
   font-size: inherit;
   line-height: 22px;
@@ -1305,7 +1282,7 @@ textarea::placeholder  {
   min-height: 220px;
   padding: 5px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 
   color: #5a5a5a;
 
@@ -1321,29 +1298,39 @@ textarea::placeholder  {
 
   -webkit-box-sizing: border-box;
 
-          box-sizing: border-box;
+    box-sizing: border-box;
   height: 100%;
-  padding: 13px 20px 99px;
+  padding: 13px 20px 35px;
 
   background-color: #f8f7f4;
   border-radius: 15px;
 }
 
-.subscription input {
-  position: absolute;
-  bottom: 35px;
-  left: 20px;
+.subscription-text {
+  margin: 14px 0 38px;
+}
 
+.subscription-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.subscription input {
   width: 368px;
+
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .subscription button {
-  position: absolute;
-  bottom: 36px;
-  right: 21px;
-
   padding: 10px 20px;
 }
+
+
 
 /* Контакты */
 
@@ -1494,7 +1481,6 @@ textarea::placeholder  {
   position: relative;
 
   min-width: 162px;
-/*  margin-top: 6px;*/
   padding: 10px 53px 10px 15px;
 
   font: inherit;
@@ -1529,18 +1515,9 @@ right: 0;
   background-position: 170px 50%;
 }
 
-
-/*.filter-item-sorting select {
-  display: block;
-}*/
-
 .filter-item-price {
   min-width: 220px;
 }
-/*
-.filter-item-price .container {
-  margin-top: 6px;
-}*/
 
 .range-controls {
   position: relative;
