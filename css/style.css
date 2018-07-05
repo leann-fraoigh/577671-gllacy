@@ -521,9 +521,9 @@ main .wrapper {
 }
 
 .user-navigation-link.basket-full::before,
-.user-navigation-link.basket-full:hover::before,
-.user-navigation-link.basket-full:focus::before,
-.user-navigation-item:hover .user-navigation-link.basket-full::before  {
+.user-navigation-item:hover .user-navigation-link.basket-full::before,
+.user-navigation-item:focus-within .user-navigation-link.basket-full::before,
+.user-navigation-link.basket-full:focus::before  {
   background-image: url("../img/basket-red.svg");
 }
 
@@ -703,7 +703,7 @@ textarea::placeholder  {
   top: 36px;
   right: 0;
 
-  display: none;
+  display: block;
 
   z-index: 150;
 }
@@ -763,7 +763,7 @@ textarea::placeholder  {
 }
 
 .basket-content td:first-child {
-  padding: 0;
+  padding: 8px 0 0 0;
 }
 
 .basket-content td:nth-child(2) {
