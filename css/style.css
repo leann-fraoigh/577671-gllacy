@@ -147,8 +147,8 @@ img {
 }
 
 .visually-hidden:not(:focus):not(:active),
-input[type="checkbox"].visually-hidden,
-input[type="radio"].visually-hidden {
+.input[type="checkbox"].visually-hidden,
+.input[type="radio"].visually-hidden {
   position: absolute;
 
   width: 1px;
@@ -552,8 +552,8 @@ input[type="radio"].visually-hidden {
   line-height: 24px;
 }
 
-input,
-textarea {
+.input,
+.textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
@@ -570,17 +570,17 @@ textarea {
   border-radius: 5px;
 }
 
-input:hover,
-textarea:hover {
+.input:hover,
+.textarea:hover {
   -webkit-box-shadow: 0 0 0 2px rgba(154, 154, 154, 0.52) inset;
           box-shadow: 0 0 0 2px rgba(154, 154, 154, 0.52) inset;
   border-color: transparent;
 }
 
-input:focus,
-textarea:focus,
-input:active,
-textarea:active  {
+.input:focus,
+.textarea:focus,
+.input:active,
+.textarea:active  {
   font-weight: 700;
 
   -webkit-box-shadow: 0 0 0 2px rgba(46, 136, 228, 0.52) inset;
@@ -589,26 +589,26 @@ textarea:active  {
   border-color: transparent;
 }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder  {
+.input::-webkit-input-placeholder,
+.textarea::-webkit-input-placeholder  {
    font-weight: 400;
    color: #999999;
 }
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder  {
+.input:-ms-input-placeholder,
+.textarea:-ms-input-placeholder  {
    font-weight: 400;
    color: #999999;
 }
 
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder  {
+.input::-ms-input-placeholder,
+.textarea::-ms-input-placeholder  {
    font-weight: 400;
    color: #999999;
 }
 
-input::placeholder,
-textarea::placeholder  {
+.input::placeholder,
+.textarea::placeholder  {
    font-weight: 400;
    color: #999999;
 }
@@ -1320,7 +1320,7 @@ textarea::placeholder  {
   justify-content: space-between;
 }
 
-.subscription input {
+.subscription .input {
   width: 368px;
 
   font-size: 16px;
@@ -1500,7 +1500,7 @@ textarea::placeholder  {
   appearance: none;
 }
 
-input::-webkit-contacts-auto-fill-button {
+.input::-webkit-contacts-auto-fill-button {
 visibility: hidden;
 display: none;
 pointer-events: none;
@@ -1930,16 +1930,16 @@ right: 0;
   font-weight: 500;
 }
 
-.modal-feedback input,
-.modal-feedback textarea {
+.modal-feedback .input,
+.modal-feedback .textarea {
   font-size: 16px;
 }
 
-.modal-feedback input {
+.modal-feedback .input {
   width: 267px;
 }
 
-.modal-feedback textarea {
+.modal-feedback .textarea {
   max-width: 428px;
   min-height: 155px;
 }
@@ -2084,3 +2084,10 @@ right: 0;
 .overlay-show {
   display: block;
 }
+
+/*.feedback-button:focus .modal-feedback,
+.feedback-button:hover .modal-feedback,
+.modal-feedback:focus-within {
+  display: block;
+}
+*/

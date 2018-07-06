@@ -9,9 +9,9 @@
   </head>
 
   <body>
-    <input class="visually-hidden" type="radio" id="product-1" name="toggle" checked>
-    <input class="visually-hidden" type="radio" id="product-2" name="toggle">
-    <input class="visually-hidden" type="radio" id="product-3" name="toggle">
+    <input class="input visually-hidden" type="radio" id="product-1" name="toggle" checked>
+    <input class="input visually-hidden" type="radio" id="product-2" name="toggle">
+    <input class="input visually-hidden" type="radio" id="product-3" name="toggle">
     <div class="site-wrapper">
       <header class="main-header wrapper">
         <nav class="main-navigation">
@@ -37,7 +37,7 @@
                 <li>
                   <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
                     <label class="visually-hidden" for="search-field">Поиск</label>
-                    <input id="search-field" type="search" name="search" placeholder="Что ищем?" size="30">
+                    <input class="input" id="search-field" type="search" name="search" placeholder="Что ищем?" size="30">
                   </form>
                 </li>
               </ul>
@@ -49,11 +49,11 @@
                     <h2 class="visually-hidden">Форма авторизации</h2>
                     <p>
                       <label class="visually-hidden" for="login-email">Ваша электронная почта</label>
-                      <input id="login-email" type="email" name="email" placeholder="Электронная почта">
+                      <input class="input" id="login-email" type="email" name="email" placeholder="Электронная почта">
                     </p>
                     <p>
                       <label class="visually-hidden" for="login-password">Ваш пароль</label>
-                      <input id="login-password" type="password" name="password" placeholder="Пароль">
+                      <input class="input" id="login-password" type="password" name="password" placeholder="Пароль">
                     </p>
                     <button class="button" type="submit">Войти</button>
                     <p class="login-additional">
@@ -168,7 +168,7 @@
               <p class="subscription-text">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будете всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спасить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
               <form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
                 <label for="subscription-email" class="visually-hidden">Электронная почта</label>
-                <input id="subscription-email" type="email" name="email" value="" placeholder="Электронная почта">
+                <input class="input" id="subscription-email" type="email" name="email" value="" placeholder="Электронная почта">
                 <button class="button" type="submit">Отправить</button>
               </form>
             </div>
@@ -186,7 +186,7 @@
               Для заказов по&nbsp;телефону:
               <span class="phone-number"><a class="link" href="tel:+78124502525">8&nbsp;812 450-25-25</a></span>
               (с&nbsp;10&nbsp;до&nbsp;20&nbsp;ежедневно)
-              <a class="button">Форма обратной связи</a>
+              <a class="button feedback-button" href="form.html">Форма обратной связи</a>
             </p>
           </div>
         </section>
@@ -250,22 +250,22 @@
           <div class="feedback-form-user-info">
             <p class="feedback-item">
               <label class="visually-hidden" for="feedback-name">Ваше имя</label>
-              <input id="feedback-name" type="text" name="name" placeholder="Как вас зовут?">
+              <input class="input" id="feedback-name" type="text" name="name" placeholder="Как вас зовут?">
             </p>
             <p class="feedback-item">
               <label class="visually-hidden" for="feedback-email">Ваша электронная почта</label>
-              <input id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?">
+              <input class="input" id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?">
             </p>
           </div>
           <p class="feedback-form-user-message feedback-item">
             <label class="visually-hidden" for="feedback-message">Тект сообщения</label>
-            <textarea name="message" id="feedback-message" cols="50" rows="4" placeholder="Напишите что-нибудь..."></textarea>
+            <textarea class="textarea" name="message" id="feedback-message" cols="50" rows="4" placeholder="Напишите что-нибудь..."></textarea>
           </p>
           <button class="button" type="submit">Отправить</button>
         </form>
       </section>
     </div>
-    <script src="js/script.min.js"></script>
+  <!--   <script src="js/script.min.js"></script> -->
 
   </body>
 </html>
