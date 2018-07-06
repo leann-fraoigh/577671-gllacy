@@ -1256,6 +1256,7 @@ textarea::placeholder  {
 
 .blog-news-item-title {
   margin: 0;
+  max-width: 281px;
 }
 
 .blog-news-item-title .link {
@@ -1379,7 +1380,7 @@ textarea::placeholder  {
           transform: translateY(-50%);
   top: 50%;
 
-  max-width: 500px;
+  width: 252px;
   max-height: 350px;
   margin: 0;
   padding: 29px 25px;
@@ -1391,6 +1392,8 @@ textarea::placeholder  {
 
 .contacts-info .address {
   display: block;
+  margin-bottom: 18px;
+
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
@@ -1402,22 +1405,21 @@ textarea::placeholder  {
   line-height: 24px;
   font-weight: 700;
 
-  margin-top: 3px;
-  margin-bottom: -18px;
+  margin-top: 5px;
+/*  margin-bottom: -18px;*/
 }
 
-.contacts-info button {
+.contacts-info .button {
   margin-top: 24px;
-  padding-right: 29px;
-  padding-left: 29px;
+  display: block;
+/*  padding-right: 27px;
+  padding-left: 27px;*/
 }
 
 .contacts .link {
   line-height: 22px;
   border: none;
 }
-
-
 
 /* ------ Каталог ------ */
 
@@ -1469,7 +1471,8 @@ textarea::placeholder  {
   margin-top: 0px;
 }
 
-.filter .container {
+.filter .container,
+.filter select {
   font-size: 16px;
   line-height: 18px;
 
@@ -1481,18 +1484,16 @@ textarea::placeholder  {
   position: relative;
 
   min-width: 162px;
-  padding: 10px 53px 10px 15px;
+  padding: 9px 35px 9px 15px;
 
-  font: inherit;
+  font-weight: 500;
   color: #ffffff;
 
-  background-color: rgba(255, 255, 255, 0.2);
   background-image: url("../img/select-white.svg");
   background-size: 11px 10px;
   background-repeat: no-repeat;
   background-position: 168px 50%;
   border: none;
-  border-radius: 20px;
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1553,6 +1554,12 @@ right: 0;
   background-color: #9bb1a5;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.range-controls .toggle:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 
