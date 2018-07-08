@@ -260,11 +260,13 @@ img {
 
 .site-navigation-item:hover .site-navigation-title,
 .site-navigation-item:focus .site-navigation-title,
-.site-navigation-item:focus-within .site-navigation-title,
-.site-navigation-current .site-navigation-title {
+.site-navigation-item:focus-within .site-navigation-title {
   border-bottom: none;
 }
 
+.site-navigation-current .site-navigation-title {
+  border-bottom: none;
+}
 
 .site-navigation-item:hover .site-navigation-sub,
 .site-navigation-item:focus-within .site-navigation-sub,
@@ -294,6 +296,7 @@ img {
   background-color: #d07058;
   border-radius: 20px 20px;
 }
+
 
 .site-navigation-sub {
   position: absolute;
@@ -763,15 +766,15 @@ img {
 }
 
 .basket-item-title {
-  width: 214px;
+  min-width: 214px;
 }
 
 .basket-item-price {
-  width: 93px;
+  min-width: 93px;
 }
 
 .basket-item-sum {
-  width: 49px;
+  min-width: 49px;
 }
 
 .user-navigation-basket-popup .price {
@@ -1356,7 +1359,7 @@ img {
   background-repeat: no-repeat;
   background-size: 1200px 430px;
 }
-
+/*
 .contacts .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1364,9 +1367,11 @@ img {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-}
+}*/
 
 .contacts .container {
+  position: relative; /*Не поняла, что за проблема тут была с флексами, так что просто сделала все на абсолютном позиционировании. */
+
   font-size: 14px;
   line-height: 20px;
 
@@ -1378,7 +1383,8 @@ img {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  top: 50%;
+  top: -214px;
+  right: 27px;
 
   width: 252px;
   max-height: 350px;
@@ -1388,6 +1394,12 @@ img {
   overflow: hidden;
 
   border-radius: 15px;
+}
+
+.contacts-offline {
+  margin-top: 0;
+  max-height: 300px;
+  overflow: hidden;
 }
 
 .contacts-info .address {
@@ -1498,6 +1510,23 @@ img {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  text-indent: 0.01px;
+  -o-text-overflow: "";
+     text-overflow: "";
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+  }
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000000;
 }
 
 .input::-webkit-contacts-auto-fill-button {
@@ -1707,7 +1736,7 @@ right: 0;
 
 .pagination-link .link {
   display: block;
-  width: 21px;
+  min-width: 21px;
   height: 21px;
   padding: 3px;
   margin-right: 2px;
